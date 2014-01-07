@@ -1,0 +1,61 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:ignore="MergeRootFrame" >
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" android:background="#ffba42">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Is it translated right?"
+                android:textSize="20sp"
+                android:id="@+id/label"/>
+        <TextView
+                android:layout_below="@+id/label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Some English word"
+                android:id="@+id/englishWord"
+                android:textSize="30sp"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"/>
+        <TextView
+                android:layout_below="@+id/englishWord"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Some translation"
+                android:id="@+id/translation"
+                android:textSize="30sp"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"/>
+        <TextView
+                android:layout_below="@+id/translation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Score : 0"
+                android:id="@+id/score"
+                android:textSize="30sp"
+                android:layout_marginTop="20dip"
+                android:textAlignment="center"/>
+        <Button
+                android:layout_below="@+id/score"
+                android:text="Yes"
+                android:id="@+id/yes"
+                android:textSize="40sp"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        <Button
+                android:layout_below="@+id/yes"
+                android:text="No"
+                android:id="@+id/no"
+                android:textSize="40sp"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+    </RelativeLayout>
+</FrameLayout>
