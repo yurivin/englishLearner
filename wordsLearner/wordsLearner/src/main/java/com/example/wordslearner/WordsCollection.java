@@ -27,7 +27,7 @@ public class WordsCollection {
 
     public static String getRandomValue(){
         Random randomGenerator = new Random();
-        return listOfWords.get(randomGenerator.nextInt()).getValue();
+        return listOfWords.get(randomGenerator.nextInt(9)).getValue();
     }
 
     public static Map<String, String> getWords() {
