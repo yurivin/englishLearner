@@ -1,5 +1,6 @@
 package com.example.wordslearner;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
@@ -8,14 +9,7 @@ import java.util.Random;
  */
 public class WordsService {
 
-    public static Map.Entry<String, String> setNewWord() {
-        Random randomGenerator = new Random();
-        if (randomGenerator.nextInt() % 2 == 0)
-            return WordsCollection.setNewWord();
-        else {
-            Map.Entry<String, String> word = WordsCollection.setNewWord();
-            word.setValue(WordsCollection.getRandomValue());
-            return word;
-        }
+    public static Map.Entry<String, String> getNewWord() {
+            return WordsCollection.getNewWord();
     }
 }

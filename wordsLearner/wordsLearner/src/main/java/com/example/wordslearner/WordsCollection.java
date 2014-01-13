@@ -7,16 +7,14 @@ import java.util.*;
  */
 public class WordsCollection {
 
-    private static Map<String, String> words = new HashMap<String, String>();
     private static List<Map.Entry<String, String>> listOfWords = new ArrayList<Map.Entry<String, String>>();
     private static Map.Entry<String, String> word;
     private static Integer iteration = -1;
 
-    public static Map.Entry<String, String> setNewWord(){
+    public static Map.Entry<String, String> getNewWord(){
 
         if(iteration == listOfWords.size() - 1)
             iteration = -1;
-
         iteration += 1;
         return word = listOfWords.get(iteration);
     }
@@ -30,15 +28,8 @@ public class WordsCollection {
         return listOfWords.get(randomGenerator.nextInt(9)).getValue();
     }
 
-    public static Map<String, String> getWords() {
-        return words;
-    }
-
-    public static void setWords(Map<String, String> words) {
-        WordsCollection.words = words;
-    }
-
     public static void initializeWords(){
+        Map<String, String> words = new HashMap<String, String>();
         words.put("teacher", "учитель");
         words.put("runner","бегун");
         words.put("possibility","возможность");
