@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,11 +22,9 @@ import java.util.Random;
 public class MainActivity extends Activity implements OnClickListener {
 
     Intent intent;
-    TextView englishWord;
-    TextView translation;
-    TextView scoreView;
-    Button btnYes;
-    Button btnNo;
+    TextView englishWord, translation, scoreView;
+    Button btnYes, btnNo;
+    Toast toast;
     int scoreNum;
 
     @Override
@@ -43,9 +42,12 @@ public class MainActivity extends Activity implements OnClickListener {
 
         btnYes.setOnClickListener(this);
         btnNo.setOnClickListener(this);
+        toast = Toast.makeText(this, "", Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
 
         scoreView.setText("Score: " + scoreNum);
         setNewWord(WordsService.getNewWord());
+
     }
 
     @Override
@@ -101,13 +103,17 @@ public class MainActivity extends Activity implements OnClickListener {
 
     private void goodCase(){
         scoreView.setText("Score: " + (++scoreNum));
-        Toast.makeText(this, "Excellent! Score: +1", Toast.LENGTH_SHORT).show();
+
+        toast.setText("Excellent! Score: +1");
+        toast.show();
     }
 
     private void badCase(){
         scoreView.setText("Score: " + (--scoreNum));
-        Toast.makeText(this, "Not that case. Score: -1 Answer is: "
-                + WordsCollection.getCurrentWord().getValue(), Toast.LENGTH_LONG).show();
+
+        toast.setText( "Not that case. Score: -1 Answer is: "
+                + WordsCollection.getCurrentWord().getValue());
+        toast.show();
     }
 
     private Map.Entry<String, String> setNewWord(Map.Entry<String, String> word) {
