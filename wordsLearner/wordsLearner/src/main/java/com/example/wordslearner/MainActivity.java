@@ -1,8 +1,8 @@
 package com.example.wordslearner;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,7 +18,7 @@ import java.util.Calendar;
 import java.util.Map;
 import java.util.Random;
 
-public class MainActivity extends ActionBarActivity implements OnClickListener {
+public class MainActivity extends Activity implements OnClickListener {
 
     Intent intent;
     TextView englishWord;
