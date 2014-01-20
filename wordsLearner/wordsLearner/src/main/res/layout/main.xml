@@ -42,19 +42,21 @@
                 android:layout_marginTop="20dip"
                 android:textAlignment="center"/>
         <Button
-                android:layout_below="@+id/score"
+                android:layout_above="@+id/no"
                 android:text="Yes"
                 android:id="@+id/yes"
                 android:textSize="40sp"
+                android:background="#ffde6f09"
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         <Button
-                android:layout_below="@+id/yes"
                 android:text="No"
                 android:id="@+id/no"
                 android:textSize="40sp"
-                android:layout_marginTop="20dp"
+                android:background="#ffde6f09"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentBottom="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
     </RelativeLayout>

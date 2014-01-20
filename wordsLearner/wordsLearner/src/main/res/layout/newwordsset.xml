@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#ffff902b">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Creation of words for set: "
+            android:textSize="20sp"
+            android:id="@+id/titleTW"
+            android:layout_gravity="center_horizontal"/>
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#ffba42">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Foreign word"
+                android:textSize="20sp"
+                android:id="@+id/foreignWordTW"
+                android:layout_alignParentLeft="true"/>
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter foreign word"
+                android:textSize="30sp"
+                android:background="#ffffa701"
+                android:id="@+id/foreignWordET"
+                android:layout_below="@+id/foreignWordTW"
+                android:layout_alignParentLeft="true"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Translation"
+                android:textSize="20sp"
+                android:id="@+id/translationTW"
+                android:layout_below="@+id/foreignWordET"
+                android:layout_alignLeft="@+id/foreignWordET"/>
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter translation"
+                android:textSize="30sp"
+                android:background="#ffffa701"
+                android:id="@+id/TranslationET"
+                android:layout_below="@+id/translationTW"
+                android:layout_alignParentLeft="true"/>
+       <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save word"
+                android:textSize="40sp"
+                android:background="#ffde6f09"
+                android:id="@+id/btnSaveWord"
+                android:layout_above="@+id/btnSaveWordSet"
+                android:layout_alignLeft="@+id/button"/>
+        <Button
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:text="Save word set"
+                android:textSize="40sp"
+                android:background="#ffde6f09"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentBottom="true"
+                android:id="@+id/btnSaveWordSet" />
+    </RelativeLayout>
+</LinearLayout>

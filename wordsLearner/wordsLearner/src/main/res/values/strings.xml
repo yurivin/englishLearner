@@ -4,5 +4,11 @@
     <string name="app_name">wordsLearner</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="availableWordSets">Available word sets</string>
+    <string name="downloadWordSet">Download word set</string>
+    <string name="createWordSet">Create word set</string>
+    <string name="learningResults">Learning results</string>
+    <string name="options">Options</string>
+    <string name="exit">Exit</string>
 
 </resources>

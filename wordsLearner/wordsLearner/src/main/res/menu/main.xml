@@ -1,8 +1,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     
-    <item android:id="@+id/action_settings"
-        android:title="@string/action_settings"
-        android:orderInCategory="100"
-        app:showAsAction="never" />
+    <item android:id="@+id/availableWordSetsMI"
+        android:title="@string/availableWordSets"
+        android:orderInCategory="0" />
+    <item android:id="@+id/downloadWordSetMI"
+          android:title="@string/downloadWordSet"
+          android:orderInCategory="1" />
+    <item android:id="@+id/createWordSetMI"
+          android:title="@string/createWordSet"
+          android:orderInCategory="2" />
+    <item android:id="@+id/learningResultsMI"
+          android:title="@string/learningResults"
+          android:orderInCategory="3" />
+    <item android:id="@+id/optionsMI"
+          android:title="@string/options"
+          android:orderInCategory="4" />
+    <item android:id="@+id/exitMI"
+          android:title="@string/exit"
+          android:orderInCategory="5" />
 </menu>
