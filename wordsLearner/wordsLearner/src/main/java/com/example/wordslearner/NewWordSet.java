@@ -109,6 +109,8 @@ public class NewWordSet extends Activity implements OnClickListener {
             sb.append("translation text, ");
             sb.append("wordSetId integer");
             sb.append(");");
+
+            db.execSQL(sb.toString());
         }
 
         @Override
