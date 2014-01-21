@@ -5,11 +5,10 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:background="#ffff902b">
-
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Creation of words for set: "
+            android:text="Name your word set "
             android:textSize="20sp"
             android:id="@+id/titleTW"
             android:layout_gravity="center_horizontal"/>
@@ -18,9 +17,9 @@
             android:layout_height="fill_parent"
             android:background="#ffba42">
         <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Here should be the title"
+                android:text="Type title here"
                 android:textSize="30sp"
                 android:background="#ffffa701"
                 android:id="@+id/wordSetTitleET"
@@ -29,10 +28,10 @@
                 android:layout_width="match_parent"
                 android:layout_alignParentBottom="true"
                 android:layout_height="wrap_content"
-                android:text="Save name"
+                android:text="Save"
                 android:textSize="40sp"
                 android:background="#ffde6f09"
-                android:id="@+id/button"
+                android:id="@+id/btnSaveTitle"
                 android:layout_centerVertical="true" />
     </RelativeLayout>
 </LinearLayout>

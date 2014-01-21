@@ -25,7 +25,7 @@
                 android:id="@+id/foreignWordTW"
                 android:layout_alignParentLeft="true"/>
         <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Enter foreign word"
                 android:textSize="30sp"
@@ -42,7 +42,7 @@
                 android:layout_below="@+id/foreignWordET"
                 android:layout_alignLeft="@+id/foreignWordET"/>
         <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Enter translation"
                 android:textSize="30sp"
