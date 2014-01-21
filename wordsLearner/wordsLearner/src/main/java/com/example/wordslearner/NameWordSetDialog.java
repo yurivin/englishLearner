@@ -24,12 +24,18 @@ public class NameWordSetDialog extends Activity implements View.OnClickListener 
 
         btnSave = (Button) findViewById(R.id.btnSaveTitle);
         wordSetTitleET = (EditText) findViewById(R.id.wordSetTitleET);
+
+        btnSave.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         switch(view.getId()){
             case R.id.btnSaveTitle :
+                Intent intent = new Intent();
+                intent.putExtra("wordSetTitle", wordSetTitleET.getText().toString());
+                setResult(RESULT_OK , intent);
+                finish();
                 break;
         }
     }
