@@ -47,7 +47,7 @@
                 android:text="Enter translation"
                 android:textSize="30sp"
                 android:background="#ffffa701"
-                android:id="@+id/TranslationET"
+                android:id="@+id/translationET"
                 android:layout_below="@+id/translationTW"
                 android:layout_alignParentLeft="true"/>
        <Button

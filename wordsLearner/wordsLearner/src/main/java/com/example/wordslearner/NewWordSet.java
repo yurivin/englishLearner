@@ -4,18 +4,18 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
  * Created by Юрий on 19.01.14.
  */
-public class NewWordSet extends Activity implements View.OnClickListener {
+public class NewWordSet extends Activity implements OnClickListener {
 
     TextView titleTW;
     EditText foreignET, translationET;
@@ -35,7 +35,7 @@ public class NewWordSet extends Activity implements View.OnClickListener {
         btnSaveWord = (Button) findViewById(R.id.btnSaveWord);
         btnSaveWordSet = (Button) findViewById(R.id.btnSaveWordSet);
         foreignET = (EditText) findViewById(R.id.foreignWordET);
-        translationET = (EditText) findViewById(R.id.translationTW);
+        translationET = (EditText) findViewById(R.id.translationET);
 
         btnSaveWord.setOnClickListener(this);
         btnSaveWordSet.setOnClickListener(this);
