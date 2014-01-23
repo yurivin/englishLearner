@@ -75,11 +75,11 @@ public class NewWordSet extends Activity implements OnClickListener {
                 long wordSetId = db.insert("WordSets", null, cv);
 
                 for (Map.Entry<String, String> entry : wordSet.entrySet()) {
-                    cv = new ContentValues();
-                    cv.put("foreign", entry.getKey());
+                    cv.clear();
+                    cv.put("foreignW", entry.getKey());
                     cv.put("translation", entry.getValue());
                     cv.put("wordSetId", wordSetId);
-                    db.insert("Words", null, cv);
+                    db.insert("WordPairs", null, cv);
                 }
                 break;
         }
@@ -87,9 +87,9 @@ public class NewWordSet extends Activity implements OnClickListener {
     }
 
     class DbHelper extends SQLiteOpenHelper {
-
+      //not use old DB myDB;
         public DbHelper(Context context) {
-            super(context, "myDB", null, 1);
+            super(context, "myDBase", null, 1);
         }
 
         @Override
@@ -103,9 +103,9 @@ public class NewWordSet extends Activity implements OnClickListener {
             db.execSQL(sb.toString());
 
             sb = new StringBuilder();
-            sb.append("CREATE TABLE Words(");
+            sb.append("CREATE TABLE WordPairs(");
             sb.append("id integer primary key autoincrement, ");
-            sb.append("foreign text, ");
+            sb.append("foreignW text, ");
             sb.append("translation text, ");
             sb.append("wordSetId integer");
             sb.append(");");
