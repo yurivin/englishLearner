@@ -4,5 +4,25 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#ffba42">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New word set created!"
+                android:textSize="30sp"
+                android:id="@+id/wordSetCreatedTW"
+                android:layout_centerInParent="true" />
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:text="OK. NICE"
+                android:textSize="40sp"
+                android:background="#ffde6f09"
+                android:id="@+id/btnWordSetCreated"
+                android:layout_alignParentBottom="true" />
+    </RelativeLayout>
 
 </LinearLayout>

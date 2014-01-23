@@ -29,7 +29,7 @@
         <activity android:name="com.example.wordslearner.NameWordSetDialog"
                   android:theme="@android:style/Theme.Dialog" >
         </activity>
-        <activity android:name="com.example.wordslearner.WordSetCreated"
+        <activity android:name=".WordSetCreatedDialog"
                   android:theme="@android:style/Theme.Dialog" >
 
         </activity>

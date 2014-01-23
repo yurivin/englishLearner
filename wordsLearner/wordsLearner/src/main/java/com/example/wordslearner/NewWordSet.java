@@ -109,6 +109,8 @@ public class NewWordSet extends Activity implements OnClickListener {
                 } else {
                     Log.d(tag, "0 rows");
                 }
+                intent = new Intent(this, WordSetCreatedDialog.class);
+                startActivity(intent);
                 finish();
             break;
         }
