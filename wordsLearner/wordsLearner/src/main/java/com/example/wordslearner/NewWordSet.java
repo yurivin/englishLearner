@@ -4,9 +4,11 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -81,7 +83,27 @@ public class NewWordSet extends Activity implements OnClickListener {
                     cv.put("wordSetId", wordSetId);
                     db.insert("WordPairs", null, cv);
                 }
-                break;
+                String tag = "myDB";
+                Log.d(tag, " - - -   R o w s   i n   m y t a b l e :   - - - ");
+                Cursor cursor = db.query("WordPairs", null, null, null, null, null, null);
+                if(cursor.moveToFirst()){
+                    int idColIndex = cursor.getColumnIndex("id");
+                    int foreignWColIndex = cursor.getColumnIndex("foreignW");
+                    int translationColIndex = cursor.getColumnIndex("translation");
+                    int wordSetIdColIndex = cursor.getColumnIndex("wordSetId");
+
+                    do{
+                         Log.d(tag,
+                                 "ID = " + cursor.getInt(idColIndex) +
+                                 ", foreignW = " + cursor.getString(foreignWColIndex) +
+                                 ", translation = " + cursor.getString(translationColIndex) +
+                                 ", wordSetId = " + cursor.getString(wordSetIdColIndex));
+                    } while(cursor.moveToNext());
+                } else {
+                    Log.d(tag, "0 rows");
+                }
+                finish();
+            break;
         }
         dbHelper.close();
     }
