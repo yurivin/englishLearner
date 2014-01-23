@@ -9,11 +9,13 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -69,6 +71,11 @@ public class NewWordSet extends Activity implements OnClickListener {
         switch (view.getId()) {
             case R.id.btnSaveWord:
                 wordSet.put(foreignET.getText().toString(), translationET.getText().toString());
+                foreignET.setText("");
+                translationET.setText("");
+                Toast toast = Toast.makeText(this, "word pair saved", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+                toast.show();
                 break;
             case R.id.btnSaveWordSet:
                 SQLiteDatabase db = dbHelper.getWritableDatabase();

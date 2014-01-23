@@ -29,5 +29,9 @@
         <activity android:name="com.example.wordslearner.NameWordSetDialog"
                   android:theme="@android:style/Theme.Dialog" >
         </activity>
+        <activity android:name="com.example.wordslearner.WordSetCreated"
+                  android:theme="@android:style/Theme.Dialog" >
+
+        </activity>
     </application>
 </manifest>
