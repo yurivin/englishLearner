@@ -5,6 +5,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 /**
  * Created by Юрий on 24.01.14.
@@ -35,6 +37,10 @@ public class AvailableWordSets extends Activity {
             for (String name : wordSetNames) {
                 Log.d("Word set Names from db: ", name);
             }
+            ListView lvWordSets = (ListView) findViewById(R.id.lvWordSets);
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, wordSetNames);
+            lvWordSets.setAdapter(adapter);
+            dbHelper.close();
         }
     }
 }

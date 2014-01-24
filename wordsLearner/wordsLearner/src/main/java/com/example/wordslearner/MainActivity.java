@@ -59,6 +59,8 @@ public class MainActivity extends Activity implements OnClickListener {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
             case R.id.availableWordSetsMI :
+                intent = new Intent(this, AvailableWordSets.class);
+                startActivity(intent);
                 break;
             case R.id.downloadWordSetMI :
                 break;
