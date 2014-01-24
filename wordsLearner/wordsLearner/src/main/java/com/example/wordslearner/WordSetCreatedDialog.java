@@ -12,6 +12,7 @@ import android.widget.Button;
 public class WordSetCreatedDialog extends Activity implements View.OnClickListener {
 
     Button btnWordSetCreated;
+    Intent intent;
 
     @Override
     public void onCreate(Bundle savedInstanceState){
@@ -25,6 +26,8 @@ public class WordSetCreatedDialog extends Activity implements View.OnClickListen
     public void onClick(View view) {
         switch(view.getId()){
             case R.id.btnWordSetCreated :
+                intent = new Intent(this, AvailableWordSets.class);
+                startActivity(intent);
                 finish();
                 break;
         }

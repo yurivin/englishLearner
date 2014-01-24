@@ -1,12 +1,10 @@
 package com.example.wordslearner;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -109,44 +107,12 @@ public class NewWordSet extends Activity implements OnClickListener {
                 } else {
                     Log.d(tag, "0 rows");
                 }
+                dbHelper.close();
                 intent = new Intent(this, WordSetCreatedDialog.class);
                 startActivity(intent);
                 finish();
             break;
         }
-        dbHelper.close();
-    }
 
-    class DbHelper extends SQLiteOpenHelper {
-      //not use old DB myDB;
-        public DbHelper(Context context) {
-            super(context, "myDBase", null, 1);
-        }
-
-        @Override
-        public void onCreate(SQLiteDatabase db) {
-            StringBuilder sb = new StringBuilder();
-            sb.append("CREATE TABLE WordSets(");
-            sb.append("id integer primary key autoincrement, ");
-            sb.append("title text");
-            sb.append(");");
-
-            db.execSQL(sb.toString());
-
-            sb = new StringBuilder();
-            sb.append("CREATE TABLE WordPairs(");
-            sb.append("id integer primary key autoincrement, ");
-            sb.append("foreignW text, ");
-            sb.append("translation text, ");
-            sb.append("wordSetId integer");
-            sb.append(");");
-
-            db.execSQL(sb.toString());
-        }
-
-        @Override
-        public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i2) {
-
-        }
     }
 }
