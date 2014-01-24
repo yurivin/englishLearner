@@ -9,7 +9,7 @@
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Creation of words for set: "
+            android:text="Creation of set: "
             android:textSize="20sp"
             android:id="@+id/titleTW"
             android:layout_gravity="center_horizontal"/>

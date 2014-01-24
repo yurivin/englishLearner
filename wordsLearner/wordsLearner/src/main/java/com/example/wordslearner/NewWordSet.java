@@ -30,6 +30,7 @@ public class NewWordSet extends Activity implements OnClickListener {
     Map<String, String> wordSet;
     DbHelper dbHelper;
     String wordSetTitle;
+    Toast toast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,19 +65,32 @@ public class NewWordSet extends Activity implements OnClickListener {
 
     @Override
     public void onClick(View view) {
-
+        toast = Toast.makeText(this, "word pair saved", Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
 
         switch (view.getId()) {
             case R.id.btnSaveWord:
                 wordSet.put(foreignET.getText().toString(), translationET.getText().toString());
                 foreignET.setText("");
                 translationET.setText("");
-                Toast toast = Toast.makeText(this, "word pair saved", Toast.LENGTH_SHORT);
-                toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+                toast.setDuration(Toast.LENGTH_SHORT);
                 toast.show();
                 break;
             case R.id.btnSaveWordSet:
+                if(wordSet.size() == 1){
+                    toast.setText("Word set contains 1 element. Please, make more elements");
+                    toast.show();
+                    return;
+                }
                 SQLiteDatabase db = dbHelper.getWritableDatabase();
+                String[] args = new String[1];
+                args[0] = wordSetTitle;
+                Cursor cursor = db.rawQuery("SELECT * FROM WordSets WHERE title = ?", args);
+                if (cursor.moveToFirst()) {
+                    toast.setText("Set with same name already exists. Please, rename set");
+                    toast.show();
+                    return;
+                }
                 ContentValues cv = new ContentValues();
                 cv.put("title", wordSetTitle);
                 long wordSetId = db.insert("WordSets", null, cv);
@@ -90,20 +104,20 @@ public class NewWordSet extends Activity implements OnClickListener {
                 }
                 String tag = "myDB";
                 Log.d(tag, " - - -   R o w s   i n   m y t a b l e :   - - - ");
-                Cursor cursor = db.query("WordPairs", null, null, null, null, null, null);
-                if(cursor.moveToFirst()){
+                cursor = db.query("WordPairs", null, null, null, null, null, null);
+                if (cursor.moveToFirst()) {
                     int idColIndex = cursor.getColumnIndex("id");
                     int foreignWColIndex = cursor.getColumnIndex("foreignW");
                     int translationColIndex = cursor.getColumnIndex("translation");
                     int wordSetIdColIndex = cursor.getColumnIndex("wordSetId");
 
-                    do{
-                         Log.d(tag,
-                                 "ID = " + cursor.getInt(idColIndex) +
-                                 ", foreignW = " + cursor.getString(foreignWColIndex) +
-                                 ", translation = " + cursor.getString(translationColIndex) +
-                                 ", wordSetId = " + cursor.getString(wordSetIdColIndex));
-                    } while(cursor.moveToNext());
+                    do {
+                        Log.d(tag,
+                                "ID = " + cursor.getInt(idColIndex) +
+                                        ", foreignW = " + cursor.getString(foreignWColIndex) +
+                                        ", translation = " + cursor.getString(translationColIndex) +
+                                        ", wordSetId = " + cursor.getString(wordSetIdColIndex));
+                    } while (cursor.moveToNext());
                 } else {
                     Log.d(tag, "0 rows");
                 }
@@ -111,7 +125,7 @@ public class NewWordSet extends Activity implements OnClickListener {
                 intent = new Intent(this, WordSetCreatedDialog.class);
                 startActivity(intent);
                 finish();
-            break;
+                break;
         }
 
     }

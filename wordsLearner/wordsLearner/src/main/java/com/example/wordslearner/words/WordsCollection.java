@@ -25,7 +25,7 @@ public class WordsCollection {
 
     public static String getRandomValue(){
         Random randomGenerator = new Random();
-        return listOfWords.get(randomGenerator.nextInt(9)).getValue();
+        return listOfWords.get(randomGenerator.nextInt(listOfWords.size() - 1)).getValue();
     }
 
     public static void initializeWords(){
@@ -40,6 +40,11 @@ public class WordsCollection {
         words.put("example","пример");
         words.put("try","попытка");
         words.put("to get","получать");
+        listOfWords.addAll(words.entrySet());
+    }
+
+    public static void initializeWords(Map<String, String> words){
+        listOfWords.clear();
         listOfWords.addAll(words.entrySet());
     }
 }

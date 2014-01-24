@@ -2,6 +2,8 @@ package com.example.wordslearner;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -16,6 +18,7 @@ import com.example.wordslearner.services.WordsService;
 import com.example.wordslearner.words.WordsCollection;
 
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
@@ -26,6 +29,8 @@ public class MainActivity extends Activity implements OnClickListener {
     Button btnYes, btnNo;
     Toast toast;
     int scoreNum;
+    DbHelper dbHelper;
+    Cursor cursor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +51,39 @@ public class MainActivity extends Activity implements OnClickListener {
         toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
 
         scoreView.setText("Score: " + scoreNum);
-        setNewWord(WordsService.getNewWord());
 
+        if (getIntent() != null) {
+            intent = getIntent();
+            if (intent.getExtras() != null) {
+                if (intent.getExtras().containsKey("wordSetTitle")) {
+                    String wordSetName = intent.getStringExtra("wordSetTitle");
+                    String[] args = new String[1];
+                    args[0] = wordSetName;
+                    dbHelper = new DbHelper(this);
+                    SQLiteDatabase db = dbHelper.getReadableDatabase();
+                    cursor = db.rawQuery("SELECT id FROM WordSets WHERE title = ?", args);
+                    if (cursor.moveToFirst()) {
+                        int idColIndex = cursor.getColumnIndex("id");
+                        args[0] = String.valueOf(cursor.getInt(idColIndex));
+
+                        cursor = db.rawQuery("SELECT foreignW, translation FROM WordPairs WHERE wordSetId = ?", args);
+                        int foreignWColIndex = cursor.getColumnIndex("foreignW");
+                        int translationColIndex = cursor.getColumnIndex("translation");
+                        Map<String, String> words = new HashMap<String, String>();
+                        if (cursor.moveToFirst()) {
+                            do {
+                                String foreignW = cursor.getString(foreignWColIndex);
+                                String translation = cursor.getString(translationColIndex);
+                                words.put(foreignW, translation);
+                                WordsCollection.initializeWords(words);
+                            } while (cursor.moveToNext());
+                        }
+                        dbHelper.close();
+                    }
+                }
+            }
+        }
+        setNewWord(WordsService.getNewWord());
     }
 
     @Override
@@ -57,22 +93,22 @@ public class MainActivity extends Activity implements OnClickListener {
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch(item.getItemId()) {
-            case R.id.availableWordSetsMI :
+        switch (item.getItemId()) {
+            case R.id.availableWordSetsMI:
                 intent = new Intent(this, AvailableWordSets.class);
                 startActivity(intent);
                 break;
-            case R.id.downloadWordSetMI :
+            case R.id.downloadWordSetMI:
                 break;
-            case R.id.createWordSetMI :
+            case R.id.createWordSetMI:
                 intent = new Intent(this, NewWordSet.class);
                 startActivity(intent);
                 break;
-            case R.id.learningResultsMI :
+            case R.id.learningResultsMI:
                 break;
-            case R.id.optionsMI :
+            case R.id.optionsMI:
                 break;
-            case R.id.exitMI :
+            case R.id.exitMI:
                 break;
         }
 
@@ -84,10 +120,10 @@ public class MainActivity extends Activity implements OnClickListener {
     public void onClick(View v) {
 
         switch (v.getId()) {
-            case R.id.yes :
+            case R.id.yes:
                 trueOrFalse(true);
                 break;
-            case R.id.no :
+            case R.id.no:
                 trueOrFalse(false);
                 break;
         }
@@ -95,7 +131,7 @@ public class MainActivity extends Activity implements OnClickListener {
     }
 
     private void trueOrFalse(boolean trueOtFalse) {
-        if(WordsCollection.getCurrentWord().getValue().equals(translation.getText()) == trueOtFalse) {
+        if (WordsCollection.getCurrentWord().getValue().equals(translation.getText()) == trueOtFalse) {
             goodCase();
         } else {
             badCase();
@@ -103,17 +139,17 @@ public class MainActivity extends Activity implements OnClickListener {
         setNewWord(WordsService.getNewWord());
     }
 
-    private void goodCase(){
+    private void goodCase() {
         scoreView.setText("Score: " + (++scoreNum));
 
         toast.setText("Excellent! Score: +1");
         toast.show();
     }
 
-    private void badCase(){
+    private void badCase() {
         scoreView.setText("Score: " + (--scoreNum));
 
-        toast.setText( "Not that case. Score: -1 Answer is: "
+        toast.setText("Not that case. Score: -1 Answer is: "
                 + WordsCollection.getCurrentWord().getValue());
         toast.show();
     }
@@ -122,8 +158,8 @@ public class MainActivity extends Activity implements OnClickListener {
         englishWord.setText(word.getKey());
         translation.setText(word.getValue());
 
-        if(new Random().nextInt(2) + Calendar.getInstance().getTimeInMillis() % 2 == 1)
-             translation.setText(WordsService.getRandomValue());
+        if (new Random().nextInt(2) + Calendar.getInstance().getTimeInMillis() % 2 == 1)
+            translation.setText(WordsService.getRandomValue());
 
         Log.d("UI word", word.toString());
         Log.d("WordsCollection word", WordsService.getCurrentWord().toString());
