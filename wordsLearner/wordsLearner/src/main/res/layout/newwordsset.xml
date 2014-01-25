@@ -9,7 +9,7 @@
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Creation of set: "
+            android:text="@string/creation_of_a_set"
             android:textSize="20sp"
             android:id="@+id/titleTW"
             android:layout_gravity="center_horizontal"/>
@@ -20,14 +20,13 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Foreign word"
+                android:text="@string/some_foreign_word"
                 android:textSize="20sp"
                 android:id="@+id/foreignWordTW"
                 android:layout_alignParentLeft="true"/>
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Enter foreign word"
                 android:textSize="30sp"
                 android:background="#ffffa701"
                 android:id="@+id/foreignWordET"
@@ -36,7 +35,7 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Translation"
+                android:text="@string/some_translation"
                 android:textSize="20sp"
                 android:id="@+id/translationTW"
                 android:layout_below="@+id/foreignWordET"
@@ -44,7 +43,6 @@
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Enter translation"
                 android:textSize="30sp"
                 android:background="#ffffa701"
                 android:id="@+id/translationET"
@@ -53,7 +51,7 @@
        <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Save word"
+                android:text="@string/save_word"
                 android:textSize="40sp"
                 android:background="#ffde6f09"
                 android:id="@+id/btnSaveWord"
@@ -62,7 +60,7 @@
         <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Save word set"
+                android:text="@string/save_word_set"
                 android:textSize="40sp"
                 android:background="#ffde6f09"
                 android:layout_marginTop="10dp"

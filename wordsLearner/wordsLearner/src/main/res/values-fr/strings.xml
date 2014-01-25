@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dictionairisk</string>
+    <string name="hello_world">Bonjour tout le monde!</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="availableWordSets">Collections de mots</string>
+    <string name="downloadWordSet">Télécharger mots collection</string>
+    <string name="createWordSet">Créer une collection de mots</string>
+    <string name="learningResults">"Résultats de l apprentissage</string>
+    <string name="options">Les options</string>
+    <string name="exit">Quitter</string>
+    <string name="delete">Effacer</string>
+    <string name="is_it_translated_right">Est-il traduit droit?</string>
+    <string name="some_foreign_word">Mot étranger</string>
+    <string name="some_translation">Traduction</string>
+    <string name="score">Score: </string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+    <string name="name_your_word_set">Nommez mots collection</string>
+    <string name="type_title_here">Tapez ici le titre</string>
+    <string name="save">économiser</string>
+    <string name="excellent_score">Excellent! Score: +1</string>
+    <string name="not_that_case">Non ce cas. Score: -1 La réponse est: </string>
+    <string name="creation_of_a_set">Création d une collection: </string>
+    <string name="save_word">économiser mot</string>
+    <string name="save_word_set">économiser mots collection</string>
+    <string name="new_word_set_created">Nouvelle collection de mots créé!</string>
+    <string name="ok">bien</string>
+</resources>

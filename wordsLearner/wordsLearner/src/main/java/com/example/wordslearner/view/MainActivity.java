@@ -42,7 +42,7 @@ public class MainActivity extends Activity implements OnClickListener {
         WordsCollection.initializeWords();
         scoreNum = 0;
 
-        englishWord = (TextView) findViewById(R.id.englishWord);
+        englishWord = (TextView) findViewById(R.id.foreignWord);
         translation = (TextView) findViewById(R.id.translation);
         scoreView = (TextView) findViewById(R.id.score);
         btnYes = (Button) findViewById(R.id.yes);
@@ -61,7 +61,7 @@ public class MainActivity extends Activity implements OnClickListener {
                 if (intent.getExtras().containsKey("wordSetTitle")) {
                     String wordSetName = intent.getStringExtra("wordSetTitle");
 
-                    String[] args = new String[] {WordSetsDAO.getIdByTitle(this, wordSetName).toString()};
+                    String[] args = new String[]{WordSetsDAO.getIdByTitle(this, wordSetName).toString()};
                     dbHelper = new DbHelper(this);
                     SQLiteDatabase db = dbHelper.getReadableDatabase();
 
@@ -81,8 +81,8 @@ public class MainActivity extends Activity implements OnClickListener {
                 }
             }
         }
-    setNewWord(WordsService.getNewWord());
-}
+        setNewWord(WordsService.getNewWord());
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -140,16 +140,14 @@ public class MainActivity extends Activity implements OnClickListener {
     }
 
     private void goodCase() {
-        scoreView.setText("Score: " + (++scoreNum));
-
-        toast.setText("Excellent! Score: +1");
+        scoreView.setText(getString(R.string.score) + " " + (++scoreNum));
+        toast.setText(R.string.excellent_score);
         toast.show();
     }
 
     private void badCase() {
-        scoreView.setText("Score: " + (--scoreNum));
-
-        toast.setText("Not that case. Score: -1 Answer is: "
+        scoreView.setText(getString(R.string.score) + " " + (--scoreNum));
+        toast.setText(getString(R.string.not_that_case)
                 + WordsCollection.getCurrentWord().getValue());
         toast.show();
     }

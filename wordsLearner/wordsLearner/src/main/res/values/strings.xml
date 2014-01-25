@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="app_name">wordsLearner</string>
+    <string name="app_name">Dictionairisk</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="availableWordSets">Available word sets</string>
-    <string name="downloadWordSet">Download word set</string>
-    <string name="createWordSet">Create word set</string>
+    <string name="availableWordSets">Available words sets</string>
+    <string name="downloadWordSet">Download words set</string>
+    <string name="createWordSet">Create words set</string>
     <string name="learningResults">Learning results</string>
     <string name="options">Options</string>
     <string name="exit">Exit</string>
-
+    <string name="delete">Delete</string>
+    <string name="is_it_translated_right">Is it translated right?</string>
+    <string name="some_foreign_word">Foreign word</string>
+    <string name="some_translation">Translation</string>
+    <string name="score">Score: </string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="name_your_word_set">Name words set</string>
+    <string name="type_title_here">Type title here</string>
+    <string name="save">Save</string>
+    <string name="excellent_score">Excellent! Score: +1</string>
+    <string name="not_that_case">Not that case. Score: -1 Answer is: </string>
+    <string name="creation_of_a_set">Creation of a set: </string>
+    <string name="save_word">Save word</string>
+    <string name="save_word_set">Save words set</string>
+    <string name="new_word_set_created">New words set created!</string>
+    <string name="ok">OK</string>
 </resources>

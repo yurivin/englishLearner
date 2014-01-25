@@ -63,7 +63,7 @@ public class AvailableWordSets extends Activity {
     public void onCreateContextMenu(ContextMenu menu, View view, ContextMenuInfo menuInfo) {
         switch (view.getId()) {
             case R.id.lvWordSets:
-                menu.add(0, DELETE, 0, "delete");
+                getMenuInflater().inflate(R.menu.wordsetslist, menu);
                 break;
         }
     }

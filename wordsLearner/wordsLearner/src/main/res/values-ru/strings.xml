@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Словариск</string>
+    <string name="hello_world">Привет мир!</string>
+    <string name="action_settings">Настройки</string>
+    <string name="availableWordSets">Наборы слов</string>
+    <string name="downloadWordSet">Загрузить набор слов</string>
+    <string name="createWordSet">Создать набор слов</string>
+    <string name="learningResults">Результаты изучения</string>
+    <string name="options">Опции</string>
+    <string name="exit">Выход</string>
+    <string name="delete">Удалить</string>
+    <string name="is_it_translated_right">Правильный ли это перевод?</string>
+    <string name="some_foreign_word">Иностранное слово</string>
+    <string name="some_translation">Перевод</string>
+    <string name="score">Очки: </string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="name_your_word_set">Назовите ваш набор слов</string>
+    <string name="type_title_here">Введите название сюда</string>
+    <string name="save">Сохранить</string>
+    <string name="excellent_score">Замечательно! Очки +1</string>
+    <string name="not_that_case">Не верный ответ. Очки -1. Правильный ответ: </string>
+    <string name="creation_of_a_set">Создание набора слов: </string>
+    <string name="save_word">Сохранить слово</string>
+    <string name="save_word_set">Сохранить набор слов</string>
+    <string name="new_word_set_created">Новый набор слов создан!</string>
+    <string name="ok">Хорошо</string>
+</resources>

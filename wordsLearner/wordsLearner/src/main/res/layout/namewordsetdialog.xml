@@ -8,7 +8,7 @@
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name your word set "
+            android:text="@string/name_your_word_set"
             android:textSize="20sp"
             android:id="@+id/titleTW"
             android:layout_gravity="center_horizontal"/>
@@ -19,7 +19,7 @@
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Type title here"
+                android:text="@string/type_title_here"
                 android:textSize="30sp"
                 android:background="#ffffa701"
                 android:id="@+id/wordSetTitleET"
@@ -28,7 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_alignParentBottom="true"
                 android:layout_height="wrap_content"
-                android:text="Save"
+                android:text="@string/save"
                 android:textSize="40sp"
                 android:background="#ffde6f09"
                 android:id="@+id/btnSaveTitle"

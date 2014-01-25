@@ -63,7 +63,8 @@ public class NewWordSet extends Activity implements OnClickListener {
             return;
         }
         wordSetTitle = data.getStringExtra("wordSetTitle");
-        titleTW.setText(titleTW.getText() + " " + wordSetTitle);
+
+        titleTW.setText(getString(R.string.creation_of_a_set) + " " + wordSetTitle);
     }
 
     @Override

@@ -12,7 +12,7 @@
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Is it translated right?"
+                android:text="@string/is_it_translated_right"
                 android:textSize="20sp"
                 android:id="@+id/label"
                 android:background="#ffff902b"/>
@@ -20,16 +20,16 @@
                 android:layout_below="@+id/label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Some English word"
-                android:id="@+id/englishWord"
+                android:text="@string/some_foreign_word"
+                android:id="@+id/foreignWord"
                 android:textSize="30sp"
                 android:layout_marginTop="20dp"
                 android:textAlignment="center"/>
         <TextView
-                android:layout_below="@+id/englishWord"
+                android:layout_below="@+id/foreignWord"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Some translation"
+                android:text="@string/some_translation"
                 android:id="@+id/translation"
                 android:textSize="30sp"
                 android:layout_marginTop="20dp"
@@ -38,14 +38,14 @@
                 android:layout_below="@+id/translation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Score : 0"
+                android:text="@string/score"
                 android:id="@+id/score"
                 android:textSize="30sp"
                 android:layout_marginTop="20dip"
                 android:textAlignment="center"/>
         <Button
                 android:layout_above="@+id/no"
-                android:text="Yes"
+                android:text="@string/yes"
                 android:id="@+id/yes"
                 android:textSize="40sp"
                 android:background="#ffde6f09"
@@ -53,7 +53,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         <Button
-                android:text="No"
+                android:text="@string/no"
                 android:id="@+id/no"
                 android:textSize="40sp"
                 android:background="#ffde6f09"
