@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 /**
  * Created by Юрий on 24.01.14.
  */
-class DbHelper extends SQLiteOpenHelper {
+public class DbHelper extends SQLiteOpenHelper {
     //not use old DB myDB;
     public DbHelper(Context context) {
         super(context, "myDBase", null, 1);

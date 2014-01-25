@@ -1,4 +1,4 @@
-package com.example.wordslearner;
+package com.example.wordslearner.view;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -14,6 +14,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.example.wordslearner.DbHelper;
+import com.example.wordslearner.R;
 import com.example.wordslearner.services.WordsService;
 import com.example.wordslearner.words.WordsCollection;
 
@@ -75,8 +77,8 @@ public class MainActivity extends Activity implements OnClickListener {
                                 String foreignW = cursor.getString(foreignWColIndex);
                                 String translation = cursor.getString(translationColIndex);
                                 words.put(foreignW, translation);
-                                WordsCollection.initializeWords(words);
                             } while (cursor.moveToNext());
+                            WordsCollection.initializeWords(words);
                         }
                         dbHelper.close();
                     }

@@ -1,4 +1,4 @@
-package com.example.wordslearner;
+package com.example.wordslearner.view;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -14,6 +14,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.example.wordslearner.DbHelper;
+import com.example.wordslearner.R;
 
 import java.util.HashMap;
 import java.util.Map;

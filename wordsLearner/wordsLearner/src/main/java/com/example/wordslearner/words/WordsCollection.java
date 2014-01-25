@@ -13,7 +13,7 @@ public class WordsCollection {
 
     public static Map.Entry<String, String> getNewWord(){
 
-        if(iteration == listOfWords.size() - 1)
+        if(iteration >= listOfWords.size() - 1)
             iteration = -1;
         iteration += 1;
         return word = listOfWords.get(iteration);

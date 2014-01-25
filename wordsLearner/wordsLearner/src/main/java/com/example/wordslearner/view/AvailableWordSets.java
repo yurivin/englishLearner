@@ -1,4 +1,4 @@
-package com.example.wordslearner;
+package com.example.wordslearner.view;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,6 +11,9 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import com.example.wordslearner.DbHelper;
+import com.example.wordslearner.R;
+import com.example.wordslearner.view.MainActivity;
 
 /**
  * Created by Юрий on 24.01.14.
