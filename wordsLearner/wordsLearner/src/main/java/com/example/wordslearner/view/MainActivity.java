@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.example.wordslearner.DbHelper;
 import com.example.wordslearner.R;
+import com.example.wordslearner.dao.WordSetsDAO;
 import com.example.wordslearner.services.WordsService;
 import com.example.wordslearner.words.WordsCollection;
 
@@ -59,34 +60,29 @@ public class MainActivity extends Activity implements OnClickListener {
             if (intent.getExtras() != null) {
                 if (intent.getExtras().containsKey("wordSetTitle")) {
                     String wordSetName = intent.getStringExtra("wordSetTitle");
-                    String[] args = new String[1];
-                    args[0] = wordSetName;
+
+                    String[] args = new String[] {WordSetsDAO.getIdByTitle(this, wordSetName).toString()};
                     dbHelper = new DbHelper(this);
                     SQLiteDatabase db = dbHelper.getReadableDatabase();
-                    cursor = db.rawQuery("SELECT id FROM WordSets WHERE title = ?", args);
-                    if (cursor.moveToFirst()) {
-                        int idColIndex = cursor.getColumnIndex("id");
-                        args[0] = String.valueOf(cursor.getInt(idColIndex));
 
-                        cursor = db.rawQuery("SELECT foreignW, translation FROM WordPairs WHERE wordSetId = ?", args);
-                        int foreignWColIndex = cursor.getColumnIndex("foreignW");
-                        int translationColIndex = cursor.getColumnIndex("translation");
-                        Map<String, String> words = new HashMap<String, String>();
-                        if (cursor.moveToFirst()) {
-                            do {
-                                String foreignW = cursor.getString(foreignWColIndex);
-                                String translation = cursor.getString(translationColIndex);
-                                words.put(foreignW, translation);
-                            } while (cursor.moveToNext());
-                            WordsCollection.initializeWords(words);
-                        }
-                        dbHelper.close();
+                    cursor = db.rawQuery("SELECT foreignW, translation FROM WordPairs WHERE wordSetId = ?", args);
+                    int foreignWColIndex = cursor.getColumnIndex("foreignW");
+                    int translationColIndex = cursor.getColumnIndex("translation");
+                    Map<String, String> words = new HashMap<String, String>();
+                    if (cursor.moveToFirst()) {
+                        do {
+                            String foreignW = cursor.getString(foreignWColIndex);
+                            String translation = cursor.getString(translationColIndex);
+                            words.put(foreignW, translation);
+                        } while (cursor.moveToNext());
+                        WordsCollection.initializeWords(words);
                     }
+                    dbHelper.close();
                 }
             }
         }
-        setNewWord(WordsService.getNewWord());
-    }
+    setNewWord(WordsService.getNewWord());
+}
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -99,12 +95,14 @@ public class MainActivity extends Activity implements OnClickListener {
             case R.id.availableWordSetsMI:
                 intent = new Intent(this, AvailableWordSets.class);
                 startActivity(intent);
+                finish();
                 break;
             case R.id.downloadWordSetMI:
                 break;
             case R.id.createWordSetMI:
                 intent = new Intent(this, NewWordSet.class);
                 startActivity(intent);
+                finish();
                 break;
             case R.id.learningResultsMI:
                 break;

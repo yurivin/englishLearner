@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.example.wordslearner.DbHelper;
 import com.example.wordslearner.R;
+import com.example.wordslearner.dao.WordSetsDAO;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -86,19 +87,15 @@ public class NewWordSet extends Activity implements OnClickListener {
                 }
                 SQLiteDatabase db = dbHelper.getWritableDatabase();
                 String[] args = new String[1];
-                args[0] = wordSetTitle;
-                Cursor cursor = db.rawQuery("SELECT * FROM WordSets WHERE title = ?", args);
-                if (cursor.moveToFirst()) {
+                if (WordSetsDAO.getIdByTitle(this, wordSetTitle) != null) {
                     toast.setText("Set with same name already exists. Please, rename set");
                     toast.show();
                     return;
                 }
-                ContentValues cv = new ContentValues();
-                cv.put("title", wordSetTitle);
-                long wordSetId = db.insert("WordSets", null, cv);
+                long wordSetId = WordSetsDAO.insertNewWordSet(this, wordSetTitle);
 
+                ContentValues cv = new ContentValues();
                 for (Map.Entry<String, String> entry : wordSet.entrySet()) {
-                    cv.clear();
                     cv.put("foreignW", entry.getKey());
                     cv.put("translation", entry.getValue());
                     cv.put("wordSetId", wordSetId);
@@ -106,7 +103,7 @@ public class NewWordSet extends Activity implements OnClickListener {
                 }
                 String tag = "myDB";
                 Log.d(tag, " - - -   R o w s   i n   m y t a b l e :   - - - ");
-                cursor = db.query("WordPairs", null, null, null, null, null, null);
+                Cursor cursor = db.query("WordPairs", null, null, null, null, null, null);
                 if (cursor.moveToFirst()) {
                     int idColIndex = cursor.getColumnIndex("id");
                     int foreignWColIndex = cursor.getColumnIndex("foreignW");
