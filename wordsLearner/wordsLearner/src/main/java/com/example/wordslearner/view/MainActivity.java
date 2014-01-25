@@ -17,8 +17,7 @@ import android.widget.Toast;
 import com.example.wordslearner.DbHelper;
 import com.example.wordslearner.R;
 import com.example.wordslearner.dao.WordSetsDAO;
-import com.example.wordslearner.services.WordsService;
-import com.example.wordslearner.words.WordsCollection;
+import com.example.wordslearner.words.WordsService;
 
 import java.util.Calendar;
 import java.util.HashMap;
@@ -39,7 +38,9 @@ public class MainActivity extends Activity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        WordsCollection.initializeWords();
+        if(!WordsService.isInitialised()){
+            WordsService.initializeWords();
+        }
         scoreNum = 0;
 
         englishWord = (TextView) findViewById(R.id.foreignWord);
@@ -75,7 +76,7 @@ public class MainActivity extends Activity implements OnClickListener {
                             String translation = cursor.getString(translationColIndex);
                             words.put(foreignW, translation);
                         } while (cursor.moveToNext());
-                        WordsCollection.initializeWords(words);
+                        WordsService.initializeWords(words);
                     }
                     dbHelper.close();
                 }
@@ -131,7 +132,7 @@ public class MainActivity extends Activity implements OnClickListener {
     }
 
     private void trueOrFalse(boolean trueOtFalse) {
-        if (WordsCollection.getCurrentWord().getValue().equals(translation.getText()) == trueOtFalse) {
+        if (WordsService.getCurrentWord().getValue().equals(translation.getText()) == trueOtFalse) {
             goodCase();
         } else {
             badCase();
@@ -148,7 +149,7 @@ public class MainActivity extends Activity implements OnClickListener {
     private void badCase() {
         scoreView.setText(getString(R.string.score) + " " + (--scoreNum));
         toast.setText(getString(R.string.not_that_case)
-                + WordsCollection.getCurrentWord().getValue());
+                + WordsService.getCurrentWord().getValue());
         toast.show();
     }
 

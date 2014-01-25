@@ -1,4 +1,4 @@
-package com.example.wordslearner.services;
+package com.example.wordslearner.words;
 
 import com.example.wordslearner.words.WordsCollection;
 
@@ -19,5 +19,17 @@ public class WordsService {
 
     public static String getRandomValue(){
         return WordsCollection.getRandomValue();
+    }
+
+    public static boolean isInitialised(){
+        return WordsCollection.getListOfWords().size() > 0;
+    }
+
+    public static void initializeWords(){
+        WordsCollection.initializeWords();
+    }
+
+    public static void initializeWords(Map<String, String> words) {
+        WordsCollection.initializeWords(words);
     }
 }
