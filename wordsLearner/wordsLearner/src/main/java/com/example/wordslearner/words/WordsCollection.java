@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * Created by Юрий on 09.01.14.
  */
-public class WordsCollection {
+class WordsCollection {
 
     private static List<Map.Entry<String, String>> listOfWords = new ArrayList<Map.Entry<String, String>>();
     private static Map.Entry<String, String> word;

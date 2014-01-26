@@ -25,5 +25,6 @@
     <string name="save_word">économiser mot</string>
     <string name="save_word_set">économiser mots collection</string>
     <string name="new_word_set_created">Nouvelle collection de mots créé!</string>
-    <string name="ok">bien</string>
+    <string name="ok">Иien</string>
+    <string name="incorrect_value">Мaleur incorrecte!</string>
 </resources>

@@ -2,11 +2,7 @@ package com.example.wordslearner.view;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.ContentValues;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -14,9 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.example.wordslearner.DbHelper;
 import com.example.wordslearner.R;
-import com.example.wordslearner.dao.WordSetsDAO;
+import com.example.wordslearner.dao.DbService;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -31,7 +26,6 @@ public class NewWordSet extends Activity implements OnClickListener {
     Button btnSaveWord, btnSaveWordSet;
     Intent intent;
     Map<String, String> wordSet;
-    DbHelper dbHelper;
     String wordSetTitle;
     Toast toast;
 
@@ -53,8 +47,6 @@ public class NewWordSet extends Activity implements OnClickListener {
         btnSaveWordSet.setOnClickListener(this);
 
         wordSet = new HashMap<String, String>();
-
-        dbHelper = new DbHelper(this);
     }
 
     @Override
@@ -74,6 +66,10 @@ public class NewWordSet extends Activity implements OnClickListener {
 
         switch (view.getId()) {
             case R.id.btnSaveWord:
+                if(foreignET.getText() == null || foreignET.getText().toString().isEmpty() ||
+                        translationET.getText() == null || translationET.getText().toString().isEmpty()){
+                    toast.setText(getString(R.string.incorrect_value));
+                }
                 wordSet.put(foreignET.getText().toString(), translationET.getText().toString());
                 foreignET.setText("");
                 translationET.setText("");
@@ -86,42 +82,14 @@ public class NewWordSet extends Activity implements OnClickListener {
                     toast.show();
                     return;
                 }
-                SQLiteDatabase db = dbHelper.getWritableDatabase();
-                String[] args = new String[1];
-                if (WordSetsDAO.getIdByTitle(this, wordSetTitle) != null) {
+                if (DbService.getWordsSetId(this, wordSetTitle) != null) {
                     toast.setText("Set with same name already exists. Please, rename set");
                     toast.show();
                     return;
                 }
-                long wordSetId = WordSetsDAO.insertNewWordSet(this, wordSetTitle);
+                long wordSetId = DbService.insertNewWordSet(this, wordSetTitle);
+                DbService.insertWordPairs(this, wordSet, wordSetId);
 
-                ContentValues cv = new ContentValues();
-                for (Map.Entry<String, String> entry : wordSet.entrySet()) {
-                    cv.put("foreignW", entry.getKey());
-                    cv.put("translation", entry.getValue());
-                    cv.put("wordSetId", wordSetId);
-                    db.insert("WordPairs", null, cv);
-                }
-                String tag = "myDB";
-                Log.d(tag, " - - -   R o w s   i n   m y t a b l e :   - - - ");
-                Cursor cursor = db.query("WordPairs", null, null, null, null, null, null);
-                if (cursor.moveToFirst()) {
-                    int idColIndex = cursor.getColumnIndex("id");
-                    int foreignWColIndex = cursor.getColumnIndex("foreignW");
-                    int translationColIndex = cursor.getColumnIndex("translation");
-                    int wordSetIdColIndex = cursor.getColumnIndex("wordSetId");
-
-                    do {
-                        Log.d(tag,
-                                "ID = " + cursor.getInt(idColIndex) +
-                                        ", foreignW = " + cursor.getString(foreignWColIndex) +
-                                        ", translation = " + cursor.getString(translationColIndex) +
-                                        ", wordSetId = " + cursor.getString(wordSetIdColIndex));
-                    } while (cursor.moveToNext());
-                } else {
-                    Log.d(tag, "0 rows");
-                }
-                dbHelper.close();
                 intent = new Intent(this, WordSetCreatedDialog.class);
                 startActivity(intent);
                 finish();

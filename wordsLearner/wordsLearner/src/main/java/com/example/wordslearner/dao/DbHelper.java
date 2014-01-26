@@ -1,4 +1,4 @@
-package com.example.wordslearner;
+package com.example.wordslearner.dao;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 /**
  * Created by Юрий on 24.01.14.
  */
-public class DbHelper extends SQLiteOpenHelper {
+class DbHelper extends SQLiteOpenHelper {
     //not use old DB myDB;
     public DbHelper(Context context) {
         super(context, "myDBase", null, 1);

@@ -26,4 +26,5 @@
     <string name="save_word_set">Сохранить набор слов</string>
     <string name="new_word_set_created">Новый набор слов создан!</string>
     <string name="ok">Хорошо</string>
+    <string name="incorrect_value">Введено неверное значение!</string>
 </resources>

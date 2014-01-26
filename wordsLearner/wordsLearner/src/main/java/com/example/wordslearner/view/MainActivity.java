@@ -2,8 +2,6 @@ package com.example.wordslearner.view;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -14,13 +12,11 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.example.wordslearner.DbHelper;
 import com.example.wordslearner.R;
-import com.example.wordslearner.dao.WordSetsDAO;
+import com.example.wordslearner.dao.DbService;
 import com.example.wordslearner.words.WordsService;
 
 import java.util.Calendar;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
@@ -31,14 +27,12 @@ public class MainActivity extends Activity implements OnClickListener {
     Button btnYes, btnNo;
     Toast toast;
     int scoreNum;
-    DbHelper dbHelper;
-    Cursor cursor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        if(!WordsService.isInitialised()){
+        if (!WordsService.isInitialised()) {
             WordsService.initializeWords();
         }
         scoreNum = 0;
@@ -60,25 +54,8 @@ public class MainActivity extends Activity implements OnClickListener {
             intent = getIntent();
             if (intent.getExtras() != null) {
                 if (intent.getExtras().containsKey("wordSetTitle")) {
-                    String wordSetName = intent.getStringExtra("wordSetTitle");
-
-                    String[] args = new String[]{WordSetsDAO.getIdByTitle(this, wordSetName).toString()};
-                    dbHelper = new DbHelper(this);
-                    SQLiteDatabase db = dbHelper.getReadableDatabase();
-
-                    cursor = db.rawQuery("SELECT foreignW, translation FROM WordPairs WHERE wordSetId = ?", args);
-                    int foreignWColIndex = cursor.getColumnIndex("foreignW");
-                    int translationColIndex = cursor.getColumnIndex("translation");
-                    Map<String, String> words = new HashMap<String, String>();
-                    if (cursor.moveToFirst()) {
-                        do {
-                            String foreignW = cursor.getString(foreignWColIndex);
-                            String translation = cursor.getString(translationColIndex);
-                            words.put(foreignW, translation);
-                        } while (cursor.moveToNext());
-                        WordsService.initializeWords(words);
-                    }
-                    dbHelper.close();
+                    String wordsSetTitle = intent.getStringExtra("wordSetTitle");
+                    WordsService.initializeWords(DbService.getWordPairs(this, wordsSetTitle));
                 }
             }
         }

@@ -3,7 +3,6 @@ package com.example.wordslearner.dao;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import com.example.wordslearner.DbHelper;
 import android.content.Context;
 
 /**
@@ -11,55 +10,52 @@ import android.content.Context;
  */
 public class WordSetsDAO {
 
-    static DbHelper dbHelper;
     static Cursor cursor;
+    static SQLiteDatabase db;
 
-    public static Integer getIdByTitle(Context context, String title) {
-        String[] args = new String[1];
-        args[0] = title;
-        SQLiteDatabase db = getReadableDb(context);
+    protected static Integer getIdByTitle(Context context, String title) {
+        Integer id = null;
+        String[] args = {title};
+        db = DbUtils.getReadableDb(context);
         cursor = db.rawQuery("SELECT id FROM WordSets WHERE title = ?", args);
         if (cursor.moveToFirst()) {
             int idColIndex = cursor.getColumnIndex("id");
-            return cursor.getInt(idColIndex);
+            id = cursor.getInt(idColIndex);
         }
-        return null;
+        DbUtils.closeDb();
+        return id;
     }
 
-    public static long insertNewWordSet(Context context, String title) {
-        SQLiteDatabase db = getReadableDb(context);
+    protected static long insertNewWordSet(Context context, String title) {
+        db = DbUtils.getWritableDb(context);
         ContentValues cv = new ContentValues();
         cv.put("title", title);
-        return db.insert("WordSets", null, cv);
+        long id = db.insert("WordSets", null, cv);
+        DbUtils.closeDb();
+        return id;
     }
 
-    public static String[] getAllWordSetNames(Context context) {
-        dbHelper = new DbHelper(context);
-        SQLiteDatabase db = dbHelper.getReadableDatabase();
+    protected static String[] getAllWordSetNames(Context context) {
+        String[] wordSetNames = null;
+        db = DbUtils.getReadableDb(context);
         cursor = db.query("WordSets", null, null, null, null, null, null);
         if (cursor.moveToFirst()) {
-            String[] wordSetNames = new String[cursor.getCount()];
+            wordSetNames = new String[cursor.getCount()];
             int i = 0;
             int wordSetNameIndex = cursor.getColumnIndex("title");
             do {
                 wordSetNames[i] = cursor.getString(wordSetNameIndex);
                 i++;
             } while (cursor.moveToNext());
-            return wordSetNames;
-        } else {
-            return null;
         }
+        DbUtils.closeDb();
+        return wordSetNames;
     }
 
-    private static SQLiteDatabase getReadableDb(Context context){
-        dbHelper = new DbHelper(context);
-        SQLiteDatabase db = dbHelper.getReadableDatabase();
-        return db;
-    }
-
-    private static SQLiteDatabase getWritableDb(Context context){
-        dbHelper = new DbHelper(context);
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
-        return db;
+    protected static void deleteById(Context context, int id){
+        db = DbUtils.getWritableDb(context);
+        String[] args = {String.valueOf(id)};
+        db.delete("WordSets", "id = ?", args);
+        DbUtils.closeDb();
     }
 }

@@ -26,4 +26,5 @@
     <string name="save_word_set">Save words set</string>
     <string name="new_word_set_created">New words set created!</string>
     <string name="ok">OK</string>
+    <string name="incorrect_value">Incorrect value!</string>
 </resources>
