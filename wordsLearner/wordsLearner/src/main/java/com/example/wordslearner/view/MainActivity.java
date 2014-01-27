@@ -12,6 +12,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.example.wordslearner.MainMenu;
 import com.example.wordslearner.R;
 import com.example.wordslearner.dao.DbService;
 import com.example.wordslearner.words.WordsService;
@@ -69,28 +70,8 @@ public class MainActivity extends Activity implements OnClickListener {
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.availableWordSetsMI:
-                intent = new Intent(this, AvailableWordSets.class);
-                startActivity(intent);
-                finish();
-                break;
-            case R.id.downloadWordSetMI:
-                break;
-            case R.id.createWordSetMI:
-                intent = new Intent(this, NewWordSet.class);
-                startActivity(intent);
-                finish();
-                break;
-            case R.id.learningResultsMI:
-                break;
-            case R.id.optionsMI:
-                break;
-            case R.id.exitMI:
-                break;
-        }
-
-
+        MainMenu mainMenu = new MainMenu(this);
+        mainMenu.onOptionsItemSelected(item);
         return super.onOptionsItemSelected(item);
     }
 

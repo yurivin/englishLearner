@@ -8,7 +8,7 @@
     <string name="createWordSet">Créer une collection de mots</string>
     <string name="learningResults">"Résultats de l apprentissage</string>
     <string name="options">Les options</string>
-    <string name="exit">Quitter</string>
+    <string name="learn">étudier</string>
     <string name="delete">Effacer</string>
     <string name="is_it_translated_right">Est-il traduit droit?</string>
     <string name="some_foreign_word">Mot étranger</string>

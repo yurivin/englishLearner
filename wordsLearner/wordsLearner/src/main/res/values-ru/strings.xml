@@ -8,7 +8,7 @@
     <string name="createWordSet">Создать набор слов</string>
     <string name="learningResults">Результаты изучения</string>
     <string name="options">Опции</string>
-    <string name="exit">Выход</string>
+    <string name="learn">Учить</string>
     <string name="delete">Удалить</string>
     <string name="is_it_translated_right">Правильный ли это перевод?</string>
     <string name="some_foreign_word">Иностранное слово</string>

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView.AdapterContextMenuInfo;
@@ -14,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import com.example.wordslearner.LogUtils;
+import com.example.wordslearner.MainMenu;
 import com.example.wordslearner.R;
 import com.example.wordslearner.dao.DbService;
 
@@ -74,5 +76,17 @@ public class AvailableWordSets extends Activity {
         LogUtils.debugForCycleLog("Word set Names from db: ", wordSetNames);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, wordSetNames);
         lvWordSets.setAdapter(adapter);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        MainMenu mainMenu = new MainMenu(this);
+        mainMenu.onOptionsItemSelected(item);
+        return super.onOptionsItemSelected(item);
     }
 }
