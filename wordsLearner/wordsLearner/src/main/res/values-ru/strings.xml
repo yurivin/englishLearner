@@ -19,6 +19,7 @@
     <string name="name_your_word_set">Назовите ваш набор слов</string>
     <string name="type_title_here">Введите название сюда</string>
     <string name="save">Сохранить</string>
+    <string name="saved">Сохранено</string>
     <string name="excellent_score">Замечательно! Очки +1</string>
     <string name="not_that_case">Не верный ответ. Очки -1. Правильный ответ: </string>
     <string name="creation_of_a_set">Создание набора слов: </string>

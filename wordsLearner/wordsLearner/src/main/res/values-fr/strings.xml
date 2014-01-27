@@ -19,12 +19,13 @@
     <string name="name_your_word_set">Nommez mots collection</string>
     <string name="type_title_here">Tapez ici le titre</string>
     <string name="save">économiser</string>
+    <string name="saved">enregistré</string>
     <string name="excellent_score">Excellent! Score: +1</string>
     <string name="not_that_case">Non ce cas. Score: -1 La réponse est: </string>
     <string name="creation_of_a_set">Création d une collection: </string>
     <string name="save_word">économiser mot</string>
     <string name="save_word_set">économiser mots collection</string>
     <string name="new_word_set_created">Nouvelle collection de mots créé!</string>
-    <string name="ok">Иien</string>
+    <string name="ok">Bien</string>
     <string name="incorrect_value">Мaleur incorrecte!</string>
 </resources>

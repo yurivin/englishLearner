@@ -19,6 +19,7 @@
     <string name="name_your_word_set">Name words set</string>
     <string name="type_title_here">Type title here</string>
     <string name="save">Save</string>
+    <string name="saved">saved</string>
     <string name="excellent_score">Excellent! Score: +1</string>
     <string name="not_that_case">Not that case. Score: -1 Answer is: </string>
     <string name="creation_of_a_set">Creation of a set: </string>
@@ -27,4 +28,5 @@
     <string name="new_word_set_created">New words set created!</string>
     <string name="ok">OK</string>
     <string name="incorrect_value">Incorrect value!</string>
+    <string name="word_pair_saved">Words pair saved</string>
 </resources>

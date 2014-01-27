@@ -54,7 +54,6 @@
                 android:textSize="40sp"
                 android:background="#ffde6f09"
                 android:id="@+id/btnRename"
-
                 android:layout_above="@+id/btnSaveWord"/>
        <Button
                 android:layout_width="match_parent"

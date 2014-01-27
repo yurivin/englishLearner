@@ -26,7 +26,7 @@ public class NewWordSet extends Activity implements OnClickListener {
 
     TextView titleTW;
     EditText foreignET, translationET;
-    Button btnSaveWord, btnSaveWordSet, btnRenameWordsSet;
+    Button btnSaveWord, btnSaveWordSet, btnRename;
     Intent intent;
     Map<String, String> wordSet;
     String wordSetTitle;
@@ -45,10 +45,11 @@ public class NewWordSet extends Activity implements OnClickListener {
         btnSaveWordSet = (Button) findViewById(R.id.btnSaveWordSet);
         foreignET = (EditText) findViewById(R.id.foreignWordET);
         translationET = (EditText) findViewById(R.id.translationET);
-        btnRenameWordsSet = (Button) findViewById(R.id.btnRename);
+        btnRename = (Button) findViewById(R.id.btnRename);
 
         btnSaveWord.setOnClickListener(this);
         btnSaveWordSet.setOnClickListener(this);
+        btnRename.setOnClickListener(this);
 
         wordSet = new HashMap<String, String>();
     }
@@ -65,7 +66,7 @@ public class NewWordSet extends Activity implements OnClickListener {
 
     @Override
     public void onClick(View view) {
-        toast = Toast.makeText(this, "word pair saved", Toast.LENGTH_LONG);
+        toast = Toast.makeText(this, R.string.saved, Toast.LENGTH_LONG);
         toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
 
         switch (view.getId()) {
