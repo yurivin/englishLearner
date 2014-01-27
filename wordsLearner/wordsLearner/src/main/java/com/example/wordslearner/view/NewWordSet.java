@@ -26,7 +26,7 @@ public class NewWordSet extends Activity implements OnClickListener {
 
     TextView titleTW;
     EditText foreignET, translationET;
-    Button btnSaveWord, btnSaveWordSet;
+    Button btnSaveWord, btnSaveWordSet, btnRenameWordsSet;
     Intent intent;
     Map<String, String> wordSet;
     String wordSetTitle;
@@ -45,6 +45,7 @@ public class NewWordSet extends Activity implements OnClickListener {
         btnSaveWordSet = (Button) findViewById(R.id.btnSaveWordSet);
         foreignET = (EditText) findViewById(R.id.foreignWordET);
         translationET = (EditText) findViewById(R.id.translationET);
+        btnRenameWordsSet = (Button) findViewById(R.id.btnRename);
 
         btnSaveWord.setOnClickListener(this);
         btnSaveWordSet.setOnClickListener(this);
@@ -68,10 +69,16 @@ public class NewWordSet extends Activity implements OnClickListener {
         toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
 
         switch (view.getId()) {
-            case R.id.btnSaveWord:
+            case R.id.btnRename :
+                intent = new Intent(this, NameWordSetDialog.class);
+                startActivityForResult(intent, 1);
+                break;
+            case R.id.btnSaveWord :
                 if(foreignET.getText() == null || foreignET.getText().toString().isEmpty() ||
                         translationET.getText() == null || translationET.getText().toString().isEmpty()){
                     toast.setText(getString(R.string.incorrect_value));
+                    toast.show();
+                    return;
                 }
                 wordSet.put(foreignET.getText().toString(), translationET.getText().toString());
                 foreignET.setText("");
