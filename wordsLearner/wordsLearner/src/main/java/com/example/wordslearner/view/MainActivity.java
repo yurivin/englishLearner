@@ -21,7 +21,7 @@ import java.util.Calendar;
 import java.util.Map;
 import java.util.Random;
 
-public class MainActivity extends Activity implements OnClickListener {
+public class MainActivity extends BaseActivity implements OnClickListener {
 
     Intent intent;
     TextView englishWord, translation, scoreView;
@@ -61,18 +61,6 @@ public class MainActivity extends Activity implements OnClickListener {
             }
         }
         setNewWord(WordsService.getNewWord());
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    public boolean onOptionsItemSelected(MenuItem item) {
-        MainMenu mainMenu = new MainMenu(this);
-        mainMenu.onOptionsItemSelected(item);
-        return super.onOptionsItemSelected(item);
     }
 
     @Override

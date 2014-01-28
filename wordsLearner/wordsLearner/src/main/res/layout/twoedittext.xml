@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:background="#ffba42">
+    <TextView android:id="@+id/wordIdTW"
+              android:visibility="invisible"
+              android:background="#ffffa701"
+              android:layout_width="match_parent"
+              android:layout_height="5sp"/>
+    <EditText android:id="@+id/editForeignET"
+              android:textSize="40sp"
+              android:textStyle="bold"
+              android:background="#ffffa701"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"/>
+    <EditText android:id="@+id/editTranslationET"
+              android:textSize="40sp"
+              android:background="#ffffa701"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"/>
+</LinearLayout>

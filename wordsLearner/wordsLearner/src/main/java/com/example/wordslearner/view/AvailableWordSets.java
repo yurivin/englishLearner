@@ -22,7 +22,7 @@ import com.example.wordslearner.dao.DbService;
 /**
  * Created by Юрий on 24.01.14.
  */
-public class AvailableWordSets extends Activity {
+public class AvailableWordSets extends BaseActivity {
 
     String[] wordSetNames;
     ListView lvWordSets;
@@ -67,6 +67,10 @@ public class AvailableWordSets extends Activity {
                 break;
             case R.id.editWordSet:
                 Log.d("Words set to change", wordSetNames[info.position]);
+                intent = new Intent(this, EditWordsSet.class);
+                intent.putExtra("wordSetTitle", wordSetNames[info.position]);
+                startActivity(intent);
+                finish();
                 break;
         }
         return super.onContextItemSelected(item);
@@ -80,15 +84,5 @@ public class AvailableWordSets extends Activity {
         lvWordSets.setAdapter(adapter);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
 
-    public boolean onOptionsItemSelected(MenuItem item) {
-        MainMenu mainMenu = new MainMenu(this);
-        mainMenu.onOptionsItemSelected(item);
-        return super.onOptionsItemSelected(item);
-    }
 }

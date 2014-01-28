@@ -4,9 +4,9 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import com.example.wordslearner.model.Word;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Юрий on 25.01.14.
@@ -28,6 +28,28 @@ public class WordsPairsDAO {
                 String foreignW = cursor.getString(foreignWColIndex);
                 String translation = cursor.getString(translationColIndex);
                 words.put(foreignW, translation);
+            } while (cursor.moveToNext());
+        }
+        DbUtils.closeDb();
+        return words;
+    }
+
+    protected static List<Word> getWords(Context context, int wordSetId){
+        db = DbUtils.getReadableDb(context);
+        String[] args = {String.valueOf(wordSetId)};
+        cursor = db.rawQuery("SELECT id, foreignW, translation FROM WordPairs WHERE wordSetId = ?", args);
+        int idColIndex = cursor.getColumnIndex("id");
+        int foreignWColIndex = cursor.getColumnIndex("foreignW");
+        int translationColIndex = cursor.getColumnIndex("translation");
+        List<Word> words = new ArrayList<Word>();
+        Word word;
+        if (cursor.moveToFirst()) {
+            do {
+                word = new Word();
+                word.setId(cursor.getInt(idColIndex));
+                word.setForeign(cursor.getString(foreignWColIndex));
+                word.setTranslation(cursor.getString(translationColIndex));
+                words.add(word);
             } while (cursor.moveToNext());
         }
         DbUtils.closeDb();

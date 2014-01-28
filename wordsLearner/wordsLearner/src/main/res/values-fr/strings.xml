@@ -29,4 +29,5 @@
     <string name="new_word_set_created">Nouvelle collection de mots créé!</string>
     <string name="ok">Bien</string>
     <string name="incorrect_value">Мaleur incorrecte!</string>
+    <string name="edit_words_set">Modifier mots coolection</string>
 </resources>

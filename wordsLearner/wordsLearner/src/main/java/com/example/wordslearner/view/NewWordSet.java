@@ -22,7 +22,7 @@ import java.util.Map;
 /**
  * Created by Юрий on 19.01.14.
  */
-public class NewWordSet extends Activity implements OnClickListener {
+public class NewWordSet extends BaseActivity implements OnClickListener {
 
     TextView titleTW;
     EditText foreignET, translationET;
@@ -108,18 +108,4 @@ public class NewWordSet extends Activity implements OnClickListener {
         }
 
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    public boolean onOptionsItemSelected(MenuItem item) {
-        MainMenu mainMenu = new MainMenu(this);
-        mainMenu.onOptionsItemSelected(item);
-        return super.onOptionsItemSelected(item);
-    }
-
-
 }

@@ -1,7 +1,9 @@
 package com.example.wordslearner.dao;
 
 import android.content.Context;
+import com.example.wordslearner.model.Word;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -18,6 +20,10 @@ public class DbService {
 
     public static Map<String, String> getWordPairs(Context context, String wordsSetTitle){
         return WordsPairsDAO.getWordPairs(context, WordSetsDAO.getIdByTitle(context, wordsSetTitle));
+    }
+
+    public static List<Word> getWords(Context context, int wordsSetId){
+        return WordsPairsDAO.getWords(context, wordsSetId);
     }
 
     public static void insertWordPairs(Context context, Map<String, String> wordSet, long wordSetId){
