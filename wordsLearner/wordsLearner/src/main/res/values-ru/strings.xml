@@ -10,6 +10,7 @@
     <string name="options">Опции</string>
     <string name="learn">Учить</string>
     <string name="delete">Удалить</string>
+    <string name="edit">Редактировать</string>
     <string name="is_it_translated_right">Правильный ли это перевод?</string>
     <string name="some_foreign_word">Иностранное слово</string>
     <string name="some_translation">Перевод</string>

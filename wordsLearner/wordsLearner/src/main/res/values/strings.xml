@@ -10,6 +10,7 @@
     <string name="options">Options</string>
     <string name="learn">Learn</string>
     <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
     <string name="is_it_translated_right">Is it translated right?</string>
     <string name="some_foreign_word">Foreign word</string>
     <string name="some_translation">Translation</string>

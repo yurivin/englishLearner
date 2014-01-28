@@ -58,13 +58,15 @@ public class AvailableWordSets extends Activity {
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
-
+        AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
         switch (item.getItemId()) {
             case R.id.deleteWordSet:
-                AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
                 DbService.deleteWordSet(this, wordSetNames[info.position]);
-                Log.d("deleted wordsSet :", wordSetNames[info.position]);
+                Log.d("deleted wordsSet : ", wordSetNames[info.position]);
                 showWordsSets();
+                break;
+            case R.id.editWordSet:
+                Log.d("Words set to change", wordSetNames[info.position]);
                 break;
         }
         return super.onContextItemSelected(item);
