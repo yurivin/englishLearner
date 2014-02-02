@@ -40,6 +40,7 @@ public class EditWordsSet extends BaseActivity implements OnClickListener{
         lvEditWordSets.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         wordSetTitle = getIntent().getStringExtra("wordSetTitle");
         wordsSetId = DbService.getWordsSetId(this, wordSetTitle);
+        data =  new ArrayList<Map<String, String>> ();
         refreshData();
 
         sAdapter = new SimpleAdapter(this, data, R.layout.threetextview, from, to);
@@ -61,7 +62,7 @@ public class EditWordsSet extends BaseActivity implements OnClickListener{
                 intent.putExtra("wordId",idView.getText().toString());
                 intent.putExtra("foreign",foreignTW.getText().toString());
                 intent.putExtra("translation",translationTW.getText().toString());
-                startActivity(intent);
+                startActivityForResult(intent, 2);
             }
         });
     }
@@ -72,15 +73,14 @@ public class EditWordsSet extends BaseActivity implements OnClickListener{
     }
 
     @Override
-    public void onRestart() {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
         refreshData();
         sAdapter.notifyDataSetChanged();
     }
 
     private void refreshData() {
+        data.clear();
         List<Word> words = DbService.getWords(this, wordsSetId);
-        data =
-                new ArrayList<Map<String, String>> (words.size());
         Map<String, String> m;
         for(Word word : words) {
             m = new HashMap<String, String>();

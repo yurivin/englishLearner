@@ -16,7 +16,7 @@ public class WordsPairsDAO {
     static Cursor cursor;
     static SQLiteDatabase db;
 
-    protected static Map<String, String> getWordPairs(Context context, int wordSetId){
+    protected static Map<String, String> getWordPairs(Context context, int wordSetId) {
         db = DbUtils.getReadableDb(context);
         String[] args = {String.valueOf(wordSetId)};
         cursor = db.rawQuery("SELECT foreignW, translation FROM WordPairs WHERE wordSetId = ?", args);
@@ -34,7 +34,7 @@ public class WordsPairsDAO {
         return words;
     }
 
-    protected static List<Word> getWords(Context context, int wordSetId){
+    protected static List<Word> getWords(Context context, int wordSetId) {
         db = DbUtils.getReadableDb(context);
         String[] args = {String.valueOf(wordSetId)};
         cursor = db.rawQuery("SELECT id, foreignW, translation FROM WordPairs WHERE wordSetId = ?", args);
@@ -56,7 +56,7 @@ public class WordsPairsDAO {
         return words;
     }
 
-    protected static void insertWordPairs(Context context, Map<String, String> wordSet, long wordSetId){
+    protected static void insertWordPairs(Context context, Map<String, String> wordSet, long wordSetId) {
         db = DbUtils.getWritableDb(context);
         ContentValues cv = new ContentValues();
         for (Map.Entry<String, String> entry : wordSet.entrySet()) {
@@ -68,10 +68,19 @@ public class WordsPairsDAO {
         DbUtils.closeDb();
     }
 
-    protected static void deleteByWordsSetId(Context context, int id){
+    protected static void deleteByWordsSetId(Context context, int id) {
         db = DbUtils.getWritableDb(context);
         String[] args = {String.valueOf(id)};
         db.delete("WordPairs", "wordSetId = ?", args);
+        DbUtils.closeDb();
+    }
+
+    protected static void updateWord(Context context, String id, String foreign, String translation) {
+        db = DbUtils.getWritableDb(context);
+        ContentValues cv = new ContentValues();
+        cv.put("foreignW", foreign);
+        cv.put("translation", translation);
+        db.update("WordPairs", cv, "id = ?", new String[]{id});
         DbUtils.closeDb();
     }
 

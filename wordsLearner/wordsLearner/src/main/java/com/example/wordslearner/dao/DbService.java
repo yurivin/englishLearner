@@ -15,7 +15,6 @@ public class DbService {
         int wordsSetId = WordSetsDAO.getIdByTitle(context, wordsSetTitle);
         WordsPairsDAO.deleteByWordsSetId(context, wordsSetId);
         WordSetsDAO.deleteById(context, wordsSetId);
-
     }
 
     public static Map<String, String> getWordPairs(Context context, String wordsSetTitle){
@@ -40,5 +39,9 @@ public class DbService {
 
     public static long insertNewWordSet(Context context, String title) {
        return WordSetsDAO.insertNewWordSet(context, title);
+    }
+
+    public static void updateWord(Context context, String id, String foreign, String translation){
+        WordsPairsDAO.updateWord(context, id, foreign, translation);
     }
 }

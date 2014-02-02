@@ -1,13 +1,14 @@
 package com.example.wordslearner.view;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import com.example.wordslearner.R;
+import com.example.wordslearner.dao.DbService;
 
 /**
  * Created by Юрий on 02.02.14.
@@ -15,7 +16,7 @@ import com.example.wordslearner.R;
 public class EditWord extends Activity implements View.OnClickListener{
 
     EditText foreignET, translationET;
-    Button savebtn;
+    Button saveBtn;
     Intent intent;
 
     @Override
@@ -24,8 +25,8 @@ public class EditWord extends Activity implements View.OnClickListener{
             setContentView(R.layout.editword);
         foreignET = (EditText) findViewById(R.id.foreignWordET);
         translationET = (EditText) findViewById(R.id.translationET);
-        savebtn = (Button) findViewById(R.id.btnSaveEditedWord);
-        savebtn.setOnClickListener(this);
+        saveBtn = (Button) findViewById(R.id.btnSaveEditedWord);
+        saveBtn.setOnClickListener(this);
 
         intent = getIntent();
         foreignET.setText(intent.getStringExtra("foreign"));
@@ -36,9 +37,9 @@ public class EditWord extends Activity implements View.OnClickListener{
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.btnSaveEditedWord :
-                
+                DbService.updateWord(this, intent.getStringExtra("wordId"), foreignET.getText().toString(),  translationET.getText().toString());
+                finish();
                 break;
         }
-
     }
 }
