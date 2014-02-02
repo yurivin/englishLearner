@@ -11,6 +11,7 @@
     <string name="learn">étudier</string>
     <string name="delete">Effacer</string>
     <string name="edit">Modifier</string>
+    <string name="edit_word">MOdifier le mot</string>
     <string name="is_it_translated_right">Est-il traduit droit?</string>
     <string name="some_foreign_word">Mot étranger</string>
     <string name="some_translation">Traduction</string>
@@ -22,12 +23,14 @@
     <string name="save">économiser</string>
     <string name="saved">enregistré</string>
     <string name="excellent_score">Excellent! Score: +1</string>
-    <string name="not_that_case">Non ce cas. Score: -1 La réponse est: </string>
+    <string name="not_that_case">Score: -1 La réponse est: </string>
     <string name="creation_of_a_set">Création d une collection: </string>
     <string name="save_word">économiser mot</string>
     <string name="save_word_set">économiser mots collection</string>
     <string name="new_word_set_created">Nouvelle collection de mots créé!</string>
     <string name="ok">Bien</string>
     <string name="incorrect_value">Мaleur incorrecte!</string>
-    <string name="edit_words_set">Modifier mots coolection</string>
+    <string name="edit_words_set">Modifier coolection de mots</string>
+    <string name="add_word">Ajout mot</string>
+    <string name="rename">Renommer</string>
 </resources>

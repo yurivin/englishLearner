@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/some_foreign_word"
                 android:textSize="20sp"
-                android:id="@+id/foreignWordTW"
+                android:id="@+id/foreignWordTV"
                 android:layout_alignParentLeft="true"/>
         <EditText
                 android:layout_width="match_parent"
@@ -30,14 +30,14 @@
                 android:textSize="30sp"
                 android:background="#ffffa701"
                 android:id="@+id/foreignWordET"
-                android:layout_below="@+id/foreignWordTW"
+                android:layout_below="@+id/foreignWordTV"
                 android:layout_alignParentLeft="true"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/some_translation"
                 android:textSize="20sp"
-                android:id="@+id/translationTW"
+                android:id="@+id/translationTV"
                 android:layout_below="@+id/foreignWordET"
                 android:layout_alignLeft="@+id/foreignWordET"/>
         <EditText
@@ -46,20 +46,20 @@
                 android:textSize="30sp"
                 android:background="#ffffa701"
                 android:id="@+id/translationET"
-                android:layout_below="@+id/translationTW"
+                android:layout_below="@+id/translationTV"
                 android:layout_alignParentLeft="true"/>
         <Button android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:text="Rename"
-                android:textSize="40sp"
+                android:textSize="20sp"
                 android:background="#ffde6f09"
                 android:id="@+id/btnRename"
                 android:layout_above="@+id/btnSaveWord"/>
        <Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:text="@string/save_word"
-                android:textSize="40sp"
+                android:textSize="20sp"
                 android:background="#ffde6f09"
                 android:id="@+id/btnSaveWord"
                 android:layout_marginTop="10dp"
@@ -67,9 +67,9 @@
                 android:layout_alignLeft="@+id/button"/>
         <Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:text="@string/save_word_set"
-                android:textSize="40sp"
+                android:textSize="20sp"
                 android:background="#ffde6f09"
                 android:layout_marginTop="10dp"
                 android:layout_alignParentBottom="true"

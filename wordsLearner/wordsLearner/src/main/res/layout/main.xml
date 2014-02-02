@@ -47,19 +47,19 @@
                 android:layout_above="@+id/no"
                 android:text="@string/yes"
                 android:id="@+id/yes"
-                android:textSize="40sp"
+                android:textSize="20sp"
                 android:background="#ffde6f09"
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="50dp"/>
         <Button
                 android:text="@string/no"
                 android:id="@+id/no"
-                android:textSize="40sp"
+                android:textSize="20sp"
                 android:background="#ffde6f09"
                 android:layout_marginTop="10dp"
                 android:layout_alignParentBottom="true"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="50dp"/>
     </RelativeLayout>
 </FrameLayout>

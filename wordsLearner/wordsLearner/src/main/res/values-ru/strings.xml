@@ -11,6 +11,7 @@
     <string name="learn">Учить</string>
     <string name="delete">Удалить</string>
     <string name="edit">Редактировать</string>
+    <string name="edit_word">Редактирование слова</string>
     <string name="is_it_translated_right">Правильный ли это перевод?</string>
     <string name="some_foreign_word">Иностранное слово</string>
     <string name="some_translation">Перевод</string>
@@ -22,7 +23,7 @@
     <string name="save">Сохранить</string>
     <string name="saved">Сохранено</string>
     <string name="excellent_score">Замечательно! Очки +1</string>
-    <string name="not_that_case">Не верный ответ. Очки -1. Правильный ответ: </string>
+    <string name="not_that_case">Очки -1. Правильный ответ: </string>
     <string name="creation_of_a_set">Создание набора слов: </string>
     <string name="save_word">Сохранить слово</string>
     <string name="save_word_set">Сохранить набор слов</string>
@@ -30,5 +31,7 @@
     <string name="ok">Хорошо</string>
     <string name="incorrect_value">Введено неверное значение!</string>
     <string name="edit_words_set">Редактировать набор слов</string>
+    <string name="add_word">Добавить слово</string>
+    <string name="rename">Переименовать</string>
 
 </resources>

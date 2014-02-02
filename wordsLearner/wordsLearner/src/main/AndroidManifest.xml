@@ -37,6 +37,10 @@
             android:name="com.example.wordslearner.view.WordSetCreatedDialog"
             android:theme="@android:style/Theme.Dialog" >
         </activity>
+        <activity
+                android:name="com.example.wordslearner.view.EditWord"
+                android:theme="@android:style/Theme.Dialog" >
+        </activity>
         <activity android:name="com.example.wordslearner.view.AvailableWordSets" >
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />

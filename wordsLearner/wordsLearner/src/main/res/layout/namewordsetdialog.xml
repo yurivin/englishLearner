@@ -27,9 +27,9 @@
         <Button
                 android:layout_width="match_parent"
                 android:layout_alignParentBottom="true"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:text="@string/save"
-                android:textSize="40sp"
+                android:textSize="20sp"
                 android:background="#ffde6f09"
                 android:id="@+id/btnSaveTitle"
                 android:layout_centerVertical="true" />

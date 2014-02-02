@@ -12,6 +12,7 @@
     <string name="learn">Learn</string>
     <string name="delete">Delete</string>
     <string name="edit">Edit</string>
+    <string name="edit_word">Edit word</string>
     <string name="is_it_translated_right">Is it translated right?</string>
     <string name="some_foreign_word">Foreign word</string>
     <string name="some_translation">Translation</string>
@@ -23,7 +24,7 @@
     <string name="save">Save</string>
     <string name="saved">saved</string>
     <string name="excellent_score">Excellent! Score: +1</string>
-    <string name="not_that_case">Not that case. Score: -1 Answer is: </string>
+    <string name="not_that_case">Score: -1 Answer is: </string>
     <string name="creation_of_a_set">Creation of a set: </string>
     <string name="save_word">Save word</string>
     <string name="save_word_set">Save words set</string>
@@ -33,5 +34,6 @@
     <string name="word_pair_saved">Words pair saved</string>
     <string name="edit_words_set">Edit words set</string>
     <string name="title_activity_base">BaseActivity</string>
-
+    <string name="add_word">Add word</string>
+    <string name="rename">Rename set</string>
 </resources>

@@ -7,12 +7,12 @@
               android:background="#ffba42">
     <TextView android:layout_width="match_parent"
               android:layout_height="wrap_content"
+              android:text="@string/edit_words_set"
               android:background="#ffff902b"
               android:textSize="20sp"/>
     <ListView
             android:id="@+id/lvEditWordsSet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#ffba42">
-    </ListView>
+            android:background="#ffba42"/>
 </LinearLayout>
