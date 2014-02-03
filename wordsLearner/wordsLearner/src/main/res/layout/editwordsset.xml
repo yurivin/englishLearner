@@ -6,11 +6,27 @@
               android:layout_height="match_parent"
               android:background="#ffba42">
     <TextView android:layout_width="match_parent"
+              android:id="@+id/editWordsSetTitleTV"
               android:layout_height="wrap_content"
               android:text="@string/edit_words_set"
               android:background="#ffff902b"
               android:textSize="20sp"/>
+    <Button android:layout_width="match_parent"
+            android:id="@+id/btnNewWord"
+            android:layout_marginTop="10dp"
+            android:background="#ffde6f09"
+            android:text="@string/new_word"
+            android:layout_height="50dp"
+            android:textSize="20sp" />
+    <Button android:layout_width="match_parent"
+            android:id="@+id/btnRenameSet"
+            android:layout_marginTop="10dp"
+            android:background="#ffde6f09"
+            android:text="@string/rename"
+            android:layout_height="50dp"
+            android:textSize="20sp" />
     <ListView
+            android:layout_marginTop="10dp"
             android:id="@+id/lvEditWordsSet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

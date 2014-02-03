@@ -29,13 +29,18 @@ public class EditWordsSet extends BaseActivity implements OnClickListener{
     int[] to = {R.id.wordIdTW, R.id.ewForeignTW, R.id.ewTranslationTW};
     SimpleAdapter sAdapter;
     ArrayList<Map<String, String>> data;
-    Intent intent;
+    Button btnNewWord, btnRename;
+    TextView title;
+    Intent intent, renameIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.editwordsset);
 
+        title = (TextView) findViewById(R.id.editWordsSetTitleTV);
+        btnNewWord = (Button) findViewById(R.id.btnNewWord);
+        btnRename = (Button) findViewById(R.id.btnRenameSet);
         lvEditWordSets =(ListView)findViewById(R.id.lvEditWordsSet);
         lvEditWordSets.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         wordSetTitle = getIntent().getStringExtra("wordSetTitle");
@@ -43,10 +48,15 @@ public class EditWordsSet extends BaseActivity implements OnClickListener{
         data =  new ArrayList<Map<String, String>> ();
         refreshData();
 
+        title.setText(getString(R.string.edit_words_set) + ": " + wordSetTitle);
+
         sAdapter = new SimpleAdapter(this, data, R.layout.threetextview, from, to);
         lvEditWordSets.setAdapter(sAdapter);
 
         intent = new Intent(this, EditWord.class);
+
+        btnNewWord.setOnClickListener(this);
+        btnRename.setOnClickListener(this);
 
         lvEditWordSets.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -69,11 +79,23 @@ public class EditWordsSet extends BaseActivity implements OnClickListener{
 
     @Override
     public void onClick(View v) {
-
+        switch(v.getId()){
+            case R.id.btnRenameSet :
+                renameIntent = new Intent(this, NameWordSetDialog.class);
+                startActivityForResult(renameIntent, 3);
+                break;
+            case R.id.btnNewWord :
+                break;
+        }
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        if(requestCode == 3){
+            title.setText(getString(R.string.edit_words_set) + ": " + data.getStringExtra("wordSetTitle"));
+            //Insert code to rename set id Db;
+        }
+
         refreshData();
         sAdapter.notifyDataSetChanged();
     }

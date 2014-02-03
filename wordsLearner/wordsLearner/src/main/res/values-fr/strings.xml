@@ -33,4 +33,5 @@
     <string name="edit_words_set">Modifier coolection de mots</string>
     <string name="add_word">Ajout mot</string>
     <string name="rename">Renommer</string>
+    <string name="new_word">Nouveau mot</string>
 </resources>

@@ -33,5 +33,6 @@
     <string name="edit_words_set">Редактировать набор слов</string>
     <string name="add_word">Добавить слово</string>
     <string name="rename">Переименовать</string>
+    <string name="new_word">Новое слово</string>
 
 </resources>
