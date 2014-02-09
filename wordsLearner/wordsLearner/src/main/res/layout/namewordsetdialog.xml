@@ -19,7 +19,7 @@
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/type_title_here"
+                android:hint="@string/type_title_here"
                 android:textSize="30sp"
                 android:background="#ffffa701"
                 android:id="@+id/wordSetTitleET"

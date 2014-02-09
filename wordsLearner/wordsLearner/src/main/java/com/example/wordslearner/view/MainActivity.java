@@ -95,7 +95,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
     private void badCase() {
         scoreView.setText(getString(R.string.score) + " " + (--scoreNum));
         toast.setText(getString(R.string.not_that_case)
-                + WordsService.getCurrentWord().getValue());
+                + " " + WordsService.getCurrentWord().getValue());
         toast.show();
     }
 
