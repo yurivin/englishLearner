@@ -51,7 +51,7 @@
                 android:background="#ffde6f09"
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"/>
+                android:layout_height="60dp"/>
         <Button
                 android:text="@string/no"
                 android:id="@+id/no"
@@ -60,6 +60,6 @@
                 android:layout_marginTop="10dp"
                 android:layout_alignParentBottom="true"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"/>
+                android:layout_height="60dp"/>
     </RelativeLayout>
 </FrameLayout>

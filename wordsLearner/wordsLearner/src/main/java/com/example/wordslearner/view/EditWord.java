@@ -16,7 +16,7 @@ import java.util.Map;
 /**
  * Created by Юрий on 02.02.14.
  */
-public class EditWord extends Activity implements View.OnClickListener {
+public class EditWord extends BaseActivity implements View.OnClickListener {
 
     EditText foreignET, translationET;
     Button saveBtn;
