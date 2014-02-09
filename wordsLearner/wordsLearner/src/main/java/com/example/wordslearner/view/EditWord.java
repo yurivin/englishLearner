@@ -10,10 +10,13 @@ import android.widget.EditText;
 import com.example.wordslearner.R;
 import com.example.wordslearner.dao.DbService;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by Юрий on 02.02.14.
  */
-public class EditWord extends Activity implements View.OnClickListener{
+public class EditWord extends Activity implements View.OnClickListener {
 
     EditText foreignET, translationET;
     Button saveBtn;
@@ -21,8 +24,8 @@ public class EditWord extends Activity implements View.OnClickListener{
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.editword);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.editword);
         foreignET = (EditText) findViewById(R.id.foreignWordET);
         translationET = (EditText) findViewById(R.id.translationET);
         saveBtn = (Button) findViewById(R.id.btnSaveEditedWord);
@@ -35,9 +38,15 @@ public class EditWord extends Activity implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
-        switch(v.getId()){
-            case R.id.btnSaveEditedWord :
-                DbService.updateWord(this, intent.getStringExtra("wordId"), foreignET.getText().toString(),  translationET.getText().toString());
+        switch (v.getId()) {
+            case R.id.btnSaveEditedWord:
+                if (intent.getBooleanExtra("newWord", false) == true) {
+                    Map<String, String> wordsSet = new HashMap<String, String>(1);
+                    wordsSet.put(foreignET.getText().toString(), translationET.getText().toString());
+                    DbService.insertWordPairs(this,  wordsSet, intent.getIntExtra("wordsSetId", -1));
+                } else {
+                    DbService.updateWord(this, intent.getStringExtra("wordId"), foreignET.getText().toString(), translationET.getText().toString());
+                }
                 finish();
                 break;
         }
