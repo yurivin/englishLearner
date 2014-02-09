@@ -35,6 +35,14 @@ public class WordSetsDAO {
         return id;
     }
 
+    protected static void renameSet(Context context, int id, String newTitle){
+        db = DbUtils.getWritableDb(context);
+        ContentValues cv = new ContentValues();
+        cv.put("title", newTitle);
+        db.update("WordSets", cv, "id = ?", new String[]{String.valueOf(id)});
+        DbUtils.closeDb();
+    }
+
     protected static String[] getAllWordSetNames(Context context) {
         String[] wordSetNames = null;
         db = DbUtils.getReadableDb(context);

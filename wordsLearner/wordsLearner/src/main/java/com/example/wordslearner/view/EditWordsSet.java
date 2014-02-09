@@ -93,7 +93,7 @@ public class EditWordsSet extends BaseActivity implements OnClickListener{
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         if(requestCode == 3){
             title.setText(getString(R.string.edit_words_set) + ": " + data.getStringExtra("wordSetTitle"));
-            //Insert code to rename set id Db;
+            DbService.renameWordsSet(this, wordsSetId, data.getStringExtra("wordSetTitle"));
         }
 
         refreshData();

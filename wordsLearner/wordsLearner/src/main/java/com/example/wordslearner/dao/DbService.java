@@ -44,4 +44,8 @@ public class DbService {
     public static void updateWord(Context context, String id, String foreign, String translation){
         WordsPairsDAO.updateWord(context, id, foreign, translation);
     }
+
+    public static void renameWordsSet(Context context, int id, String newTitle){
+        WordSetsDAO.renameSet(context, id, newTitle);
+    }
 }
