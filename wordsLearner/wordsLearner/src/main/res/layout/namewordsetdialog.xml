@@ -9,6 +9,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/name_your_word_set"
+            android:gravity="center"
             android:textSize="20sp"
             android:id="@+id/titleTW"
             android:layout_gravity="center_horizontal"/>
@@ -21,6 +22,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/type_title_here"
                 android:textSize="30sp"
+                android:gravity="center"
                 android:background="#ffffa701"
                 android:id="@+id/wordSetTitleET"
                 android:layout_centerInParent="true"/>

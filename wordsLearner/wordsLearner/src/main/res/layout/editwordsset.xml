@@ -9,6 +9,7 @@
               android:id="@+id/editWordsSetTitleTV"
               android:layout_height="wrap_content"
               android:text="@string/edit_words_set"
+              android:gravity="center"
               android:background="#ffff902b"
               android:textSize="20sp"/>
     <Button android:layout_width="match_parent"

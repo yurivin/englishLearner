@@ -9,6 +9,7 @@
               android:layout_height="wrap_content"
               android:text="@string/availableWordSets"
               android:background="#ffff902b"
+              android:gravity="center"
               android:textSize="20sp"/>
     <ListView
             android:id="@+id/lvWordSets"

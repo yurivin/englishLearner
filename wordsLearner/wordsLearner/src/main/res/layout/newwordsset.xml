@@ -10,6 +10,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/creation_of_a_set"
+            android:gravity="center"
             android:textSize="20sp"
             android:id="@+id/titleTW"
             android:layout_gravity="center_horizontal"/>
@@ -22,29 +23,31 @@
                 android:layout_height="wrap_content"
                 android:text="@string/some_foreign_word"
                 android:textSize="20sp"
+                android:gravity="center"
                 android:id="@+id/foreignWordTV"
                 android:layout_alignParentLeft="true"/>
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="30sp"
+                android:gravity="center"
                 android:background="#ffffa701"
                 android:id="@+id/foreignWordET"
-                android:layout_below="@+id/foreignWordTV"
-                android:layout_alignParentLeft="true"/>
+                android:layout_below="@+id/foreignWordTV"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/some_translation"
                 android:textSize="20sp"
+                android:gravity="center"
                 android:id="@+id/translationTV"
-                android:layout_below="@+id/foreignWordET"
-                android:layout_alignLeft="@+id/foreignWordET"/>
+                android:layout_below="@+id/foreignWordET"/>
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="30sp"
                 android:background="#ffffa701"
+                android:gravity="center"
                 android:id="@+id/translationET"
                 android:layout_below="@+id/translationTV"
                 android:layout_alignParentLeft="true"/>

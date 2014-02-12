@@ -8,6 +8,7 @@
     <TextView android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:text="@string/edit_word"
+              android:gravity="center"
               android:background="#ffff902b"
               android:id="@+id/title"
               android:textSize="20sp"/>
@@ -20,6 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/some_foreign_word"
+            android:gravity="center"
             android:textSize="20sp"
             android:id="@+id/foreignWordTV"/>
     <EditText
@@ -27,11 +29,13 @@
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="test foreign"
+            android:gravity="center"
             android:background="#ffffa701"
             android:id="@+id/foreignWordET"
             android:layout_below="@+id/foreignWordTV" />
     <TextView
             android:layout_width="wrap_content"
+            android:gravity="center"
             android:layout_height="wrap_content"
             android:text="@string/some_translation"
             android:textSize="20sp"
@@ -41,6 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
+            android:gravity="center"
             android:background="#ffffa701"
             android:text="test translation"
             android:id="@+id/translationET"
