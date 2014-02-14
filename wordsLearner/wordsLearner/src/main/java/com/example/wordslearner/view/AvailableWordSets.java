@@ -1,6 +1,5 @@
 package com.example.wordslearner.view;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -9,7 +8,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView.AdapterContextMenuInfo;
@@ -17,10 +15,9 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import com.example.wordslearner.LogUtils;
-import com.example.wordslearner.MainMenu;
+import com.example.wordslearner.utils.LogUtils;
 import com.example.wordslearner.R;
-import com.example.wordslearner.ValidationUtils;
+import com.example.wordslearner.utils.ValidationUtils;
 import com.example.wordslearner.dao.DbService;
 
 /**

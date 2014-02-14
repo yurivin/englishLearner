@@ -1,4 +1,4 @@
-package com.example.wordslearner;
+package com.example.wordslearner.utils;
 
 import java.util.Collection;
 
