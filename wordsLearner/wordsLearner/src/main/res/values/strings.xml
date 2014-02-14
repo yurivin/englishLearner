@@ -37,4 +37,5 @@
     <string name="add_word">Add word</string>
     <string name="rename">Rename set</string>
     <string name="new_word">New word</string>
+    <string name="no_wordsSets">No words sets found. Create a new words set?</string>
 </resources>

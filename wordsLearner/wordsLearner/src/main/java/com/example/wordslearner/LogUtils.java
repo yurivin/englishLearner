@@ -8,8 +8,10 @@ import android.util.Log;
 public class LogUtils {
 
     public static void debugForCycleLog(String tag, String[] array) {
-        for (String item : array) {
-            Log.d( tag, item);
+        if (!ValidationUtils.checkCollectionEmptyness(array)) {
+            for (String item : array) {
+                Log.d(tag, item);
+            }
         }
     }
 }

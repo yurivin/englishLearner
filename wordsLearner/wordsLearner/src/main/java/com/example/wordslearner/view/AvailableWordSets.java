@@ -1,6 +1,9 @@
 package com.example.wordslearner.view;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,6 +20,7 @@ import android.widget.ListView;
 import com.example.wordslearner.LogUtils;
 import com.example.wordslearner.MainMenu;
 import com.example.wordslearner.R;
+import com.example.wordslearner.ValidationUtils;
 import com.example.wordslearner.dao.DbService;
 
 /**
@@ -27,6 +31,7 @@ public class AvailableWordSets extends BaseActivity {
     String[] wordSetNames;
     ListView lvWordSets;
     Intent intent;
+    final int DIALOG_EXIT = 1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -79,10 +84,44 @@ public class AvailableWordSets extends BaseActivity {
 
     private void showWordsSets() {
         wordSetNames = DbService.getAllWordSetNames(this);
-        LogUtils.debugForCycleLog("Word set Names from db: ", wordSetNames);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, wordSetNames);
-        lvWordSets.setAdapter(adapter);
+        if (!checkSetsExistence()) {
+            LogUtils.debugForCycleLog("Word set Names from db: ", wordSetNames);
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, wordSetNames);
+            lvWordSets.setAdapter(adapter);
+        }
     }
 
+    private boolean checkSetsExistence() {
+        if (ValidationUtils.checkCollectionEmptyness(wordSetNames)) {
+            intent = new Intent(this, NewWordSet.class);
+            showDialog(DIALOG_EXIT);
+            return true;
+        }
+        return false;
+    }
+
+    protected Dialog onCreateDialog(int id){
+        if(id == DIALOG_EXIT){
+            AlertDialog.Builder adb = new AlertDialog.Builder(this);
+            adb.setMessage(R.string.no_wordsSets);
+            adb.setPositiveButton(R.string.yes, dialogOnClickListner);
+            adb.setNegativeButton(R.string.no, dialogOnClickListner);
+            return adb.create();
+        }
+        return super.onCreateDialog(id);
+    }
+
+    DialogInterface.OnClickListener dialogOnClickListner = new DialogInterface.OnClickListener(){
+        public void onClick(DialogInterface dialog, int which){
+            switch(which){
+                case Dialog.BUTTON_POSITIVE :
+                    startActivity(intent);
+                    break;
+                case Dialog.BUTTON_NEGATIVE :
+                    break;
+            }
+            finish();
+        }
+    };
 
 }

@@ -34,5 +34,6 @@
     <string name="add_word">Добавить слово</string>
     <string name="rename">Переименовать</string>
     <string name="new_word">Новое слово</string>
+    <string name="no_wordsSets">Не найдено ни одного набора слов. Создать новый набор слов?</string>
 
 </resources>

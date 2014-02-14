@@ -10,6 +10,7 @@
             android:layout_height="wrap_content"
             android:text="@string/name_your_word_set"
             android:gravity="center"
+            android:textColor="#000000"
             android:textSize="20sp"
             android:id="@+id/titleTW"
             android:layout_gravity="center_horizontal"/>
