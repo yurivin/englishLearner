@@ -1,5 +1,8 @@
 package com.example.wordslearner.utils;
 
+import android.widget.EditText;
+import com.example.wordslearner.R;
+
 import java.util.Collection;
 
 /**
@@ -19,5 +22,12 @@ public class ValidationUtils {
             return true;
         else
             return false;
+    }
+
+    public static boolean checkUserTextEmptiness(EditText editText){
+        if(editText.getText() == null || editText.getText().toString().isEmpty()){
+            return true;
+        }
+        return false;
     }
 }

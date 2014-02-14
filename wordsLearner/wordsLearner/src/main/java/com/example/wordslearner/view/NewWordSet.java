@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.example.wordslearner.R;
 import com.example.wordslearner.dao.DbService;
+import com.example.wordslearner.utils.ValidationUtils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -71,8 +72,7 @@ public class NewWordSet extends BaseActivity implements OnClickListener {
                 startActivityForResult(intent, 1);
                 break;
             case R.id.btnSaveWord :
-                if(foreignET.getText() == null || foreignET.getText().toString().isEmpty() ||
-                        translationET.getText() == null || translationET.getText().toString().isEmpty()){
+                if(ValidationUtils.checkUserTextEmptiness(foreignET) || ValidationUtils.checkUserTextEmptiness(translationET)){
                     toast.setText(getString(R.string.incorrect_value));
                     toast.show();
                     return;
@@ -102,6 +102,5 @@ public class NewWordSet extends BaseActivity implements OnClickListener {
                 finish();
                 break;
         }
-
     }
 }
