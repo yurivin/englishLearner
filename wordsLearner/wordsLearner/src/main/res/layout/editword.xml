@@ -8,6 +8,7 @@
     <TextView android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:text="@string/edit_word"
+              android:textColor="#000000"
               android:gravity="center"
               android:background="#ffff902b"
               android:id="@+id/title"
@@ -20,8 +21,9 @@
     <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000000"
             android:text="@string/some_foreign_word"
-            android:gravity="center"
             android:textSize="20sp"
             android:id="@+id/foreignWordTV"/>
     <EditText
@@ -34,9 +36,10 @@
             android:id="@+id/foreignWordET"
             android:layout_below="@+id/foreignWordTV" />
     <TextView
-            android:layout_width="wrap_content"
-            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
             android:layout_height="wrap_content"
+            android:textColor="#000000"
             android:text="@string/some_translation"
             android:textSize="20sp"
             android:id="@+id/translationTV"
