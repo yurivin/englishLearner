@@ -6,8 +6,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.ContextMenu;
-import android.view.ContextMenu.ContextMenuInfo;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView.AdapterContextMenuInfo;
@@ -23,7 +21,7 @@ import com.example.wordslearner.dao.DbService;
 /**
  * Created by Юрий on 24.01.14.
  */
-public class AvailableWordSets extends BaseActivity {
+public class AvailableWordSets extends ContextMenuDeleteEditActivity {
 
     String[] wordSetNames;
     ListView lvWordSets;
@@ -50,24 +48,15 @@ public class AvailableWordSets extends BaseActivity {
     }
 
     @Override
-    public void onCreateContextMenu(ContextMenu menu, View view, ContextMenuInfo menuInfo) {
-        switch (view.getId()) {
-            case R.id.lvWordSets:
-                getMenuInflater().inflate(R.menu.wordsetslist, menu);
-                break;
-        }
-    }
-
-    @Override
     public boolean onContextItemSelected(MenuItem item) {
         AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
         switch (item.getItemId()) {
-            case R.id.deleteWordSet:
+            case R.id.deleteCM:
                 DbService.deleteWordSet(this, wordSetNames[info.position]);
                 Log.d("deleted wordsSet : ", wordSetNames[info.position]);
                 showWordsSets();
                 break;
-            case R.id.editWordSet:
+            case R.id.editCM:
                 Log.d("Words set to change", wordSetNames[info.position]);
                 intent = new Intent(this, EditWordsSet.class);
                 intent.putExtra("wordSetTitle", wordSetNames[info.position]);

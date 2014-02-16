@@ -2,12 +2,15 @@ package com.example.wordslearner.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.*;
 import com.example.wordslearner.R;
 import com.example.wordslearner.dao.DbService;
 import com.example.wordslearner.model.Word;
+import com.example.wordslearner.utils.ValidationUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,7 +20,7 @@ import java.util.Map;
 /**
  * Created by Yuriy on 28.01.14.
  */
-public class EditWordsSet extends BaseActivity implements OnClickListener {
+public class EditWordsSet extends ContextMenuDeleteEditActivity implements OnClickListener {
 
     String wordSetTitle;
     Integer wordsSetId;
@@ -52,6 +55,7 @@ public class EditWordsSet extends BaseActivity implements OnClickListener {
 
         sAdapter = new SimpleAdapter(this, data, R.layout.threetextview, from, to);
         lvEditWordSets.setAdapter(sAdapter);
+        registerForContextMenu(lvEditWordSets);
 
         intent = new Intent(this, EditWord.class);
 
@@ -60,22 +64,24 @@ public class EditWordsSet extends BaseActivity implements OnClickListener {
 
         lvEditWordSets.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                TextView idView = (TextView) view.findViewById(R.id.wordIdTW);
-                TextView foreignTW = (TextView) view.findViewById(R.id.ewForeignTW);
-                TextView translationTW = (TextView) view.findViewById(R.id.ewTranslationTW);
-
-                //Insert checking for null and empty string
-                //Create a ValidationUtils class to use it here, in
-                //wordsSetCreation view and others.
-
-                intent.putExtra("wordId", idView.getText().toString());
-                intent.putExtra("foreign", foreignTW.getText().toString());
-                intent.putExtra("translation", translationTW.getText().toString());
-                intent.putExtra("newWord", false);
-                startActivityForResult(intent, 2);
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {;
+                editWord(position);
             }
         });
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        switch (item.getItemId()) {
+            case R.id.deleteCM:
+
+                break;
+            case R.id.editCM:
+                    editWord(info.position);
+                break;
+        }
+        return super.onContextItemSelected(item);
     }
 
     @Override
@@ -115,5 +121,15 @@ public class EditWordsSet extends BaseActivity implements OnClickListener {
             m.put(TRANSLATION, word.getTranslation());
             data.add(m);
         }
+    }
+
+    private void editWord(int position) {
+        Map<String, String> word = data.get(position);
+        intent.putExtra("wordId", word.get(WORD_ID));
+        intent.putExtra("foreign", word.get(FOREIGN_WORD));
+        intent.putExtra("translation", word.get(TRANSLATION));
+
+        intent.putExtra("newWord", false);
+        startActivityForResult(intent, 2);
     }
 }
