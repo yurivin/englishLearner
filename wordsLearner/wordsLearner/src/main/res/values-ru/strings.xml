@@ -35,5 +35,5 @@
     <string name="rename">Переименовать</string>
     <string name="new_word">Новое слово</string>
     <string name="no_wordsSets">Не найдено ни одного набора слов. Создать новый набор слов?</string>
-
+    <string name="no_delete_two_words">Не могу удалить, когда осталось всего два слова</string>
 </resources>

@@ -48,4 +48,8 @@ public class DbService {
     public static void renameWordsSet(Context context, int id, String newTitle){
         WordSetsDAO.renameSet(context, id, newTitle);
     }
+
+    public static void deleteWord(Context context, String wordId){
+        WordsPairsDAO.delete(context, wordId);
+    }
 }

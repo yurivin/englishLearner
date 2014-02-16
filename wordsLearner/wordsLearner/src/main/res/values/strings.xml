@@ -38,4 +38,5 @@
     <string name="rename">Rename set</string>
     <string name="new_word">New word</string>
     <string name="no_wordsSets">No words sets found. Create a new words set?</string>
+    <string name="no_delete_two_words">Cannot delete when words set contains only two words</string>
 </resources>

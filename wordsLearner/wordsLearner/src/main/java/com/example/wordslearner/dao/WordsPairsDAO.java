@@ -84,4 +84,10 @@ public class WordsPairsDAO {
         DbUtils.closeDb();
     }
 
+    protected static void delete(Context context, String wordId){
+        db = DbUtils.getWritableDb(context);
+        db.delete("WordPairs", "id = ?", new String[]{wordId});
+        DbUtils.closeDb();
+    }
+
 }

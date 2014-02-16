@@ -75,7 +75,13 @@ public class EditWordsSet extends ContextMenuDeleteEditActivity implements OnCli
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         switch (item.getItemId()) {
             case R.id.deleteCM:
-
+                if(data.size() < 3){
+                    Toast.makeText(this, R.string.no_delete_two_words, Toast.LENGTH_LONG).show();
+                    return super.onContextItemSelected(item);
+                }
+                Map<String, String> word = data.get(info.position);
+                DbService.deleteWord(this, word.get(WORD_ID));
+                refreshLV();
                 break;
             case R.id.editCM:
                     editWord(info.position);
@@ -106,6 +112,10 @@ public class EditWordsSet extends ContextMenuDeleteEditActivity implements OnCli
                 title.setText(getString(R.string.edit_words_set) + ": " + data.getStringExtra("wordSetTitle"));
                 DbService.renameWordsSet(this, wordsSetId, data.getStringExtra("wordSetTitle"));
         }
+        refreshLV();
+    }
+
+    private void refreshLV() {
         refreshData();
         sAdapter.notifyDataSetChanged();
     }
