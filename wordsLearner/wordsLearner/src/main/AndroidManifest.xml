@@ -63,6 +63,12 @@
             android:label="@string/title_activity_base"
             android:screenOrientation="portrait" >
         </activity>
+        <activity android:name="com.example.wordslearner.view.HowTo"
+                  android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

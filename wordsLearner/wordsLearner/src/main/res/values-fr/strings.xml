@@ -36,4 +36,6 @@
     <string name="new_word">Nouveau mot</string>
     <string name="no_wordsSets">Pas de mots ensembles trouvés. Créer un nouveau mots ensemble?</string>
     <string name="no_delete_two_words">Ne peut être retiré quand il ya seulement deux mots</string>
+    <string name="how_to">Assistance</string>
+
 </resources>

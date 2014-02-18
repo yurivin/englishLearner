@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.MenuItem;
 import com.example.wordslearner.view.AvailableWordSets;
+import com.example.wordslearner.view.HowTo;
 import com.example.wordslearner.view.MainActivity;
 import com.example.wordslearner.view.NewWordSet;
 
@@ -27,19 +28,24 @@ public class MainMenu {
                 activity.startActivity(intent);
                 activity.finish();
                 break;
-            case R.id.downloadWordSetMI:
-                break;
+//            case R.id.downloadWordSetMI:
+//                break;
             case R.id.createWordSetMI:
                 intent = new Intent(activity, NewWordSet.class);
                 activity.startActivity(intent);
                 activity.finish();
                 break;
-            case R.id.learningResultsMI:
-                break;
-            case R.id.optionsMI:
-                break;
+//            case R.id.learningResultsMI:
+//                break;
+//            case R.id.optionsMI:
+//                break;
             case R.id.LearnMI:
                 intent = new Intent(activity, MainActivity.class);
+                activity.startActivity(intent);
+                activity.finish();
+                break;
+            case R.id.HowToMI:
+                intent = new Intent(activity, HowTo.class);
                 activity.startActivity(intent);
                 activity.finish();
                 break;

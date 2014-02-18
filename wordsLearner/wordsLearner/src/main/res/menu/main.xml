@@ -1,22 +1,25 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    
+
     <item android:id="@+id/availableWordSetsMI"
         android:title="@string/availableWordSets"
         android:orderInCategory="0" />
-    <item android:id="@+id/downloadWordSetMI"
+    <!--    <item android:id="@+id/downloadWordSetMI"
           android:title="@string/downloadWordSet"
-          android:orderInCategory="1" />
+          android:orderInCategory="1" /> -->
     <item android:id="@+id/createWordSetMI"
           android:title="@string/createWordSet"
           android:orderInCategory="2" />
-    <item android:id="@+id/learningResultsMI"
-          android:title="@string/learningResults"
-          android:orderInCategory="3" />
-    <item android:id="@+id/optionsMI"
-          android:title="@string/options"
-          android:orderInCategory="4" />
+    <!--    <item android:id="@+id/learningResultsMI"
+              android:title="@string/learningResults"
+              android:orderInCategory="3" /> -->
+    <!--    <item android:id="@+id/optionsMI"
+              android:title="@string/options"
+              android:orderInCategory="4" /> -->
     <item android:id="@+id/LearnMI"
           android:title="@string/learn"
           android:orderInCategory="5" />
+    <item android:id="@+id/HowToMI"
+          android:title="@string/how_to"
+          android:orderInCategory="6" />
 </menu>

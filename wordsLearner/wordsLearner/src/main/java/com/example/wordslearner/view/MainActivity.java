@@ -25,7 +25,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 
     Intent intent;
     TextView englishWord, translation, scoreView;
-    Button btnYes, btnNo;
+    Button btnYes, btnNo, btnHelp;
     Toast toast;
     int scoreNum;
 
@@ -43,9 +43,11 @@ public class MainActivity extends BaseActivity implements OnClickListener {
         scoreView = (TextView) findViewById(R.id.score);
         btnYes = (Button) findViewById(R.id.yes);
         btnNo = (Button) findViewById(R.id.no);
+        btnHelp = (Button) findViewById(R.id.helpBtn);
 
         btnYes.setOnClickListener(this);
         btnNo.setOnClickListener(this);
+        btnHelp.setOnClickListener(this);
         toast = Toast.makeText(this, "", Toast.LENGTH_LONG);
         toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
 
@@ -73,6 +75,10 @@ public class MainActivity extends BaseActivity implements OnClickListener {
             case R.id.no:
                 trueOrFalse(false);
                 break;
+            case R.id.helpBtn:
+                intent = new Intent(this, HowTo.class);
+                startActivity(intent);
+                finish();
         }
 
     }

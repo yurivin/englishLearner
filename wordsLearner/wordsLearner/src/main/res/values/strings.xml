@@ -39,4 +39,52 @@
     <string name="new_word">New word</string>
     <string name="no_wordsSets">No words sets found. Create a new words set?</string>
     <string name="no_delete_two_words">Cannot delete when words set contains only two words</string>
+    <string name="how_to">How to ...</string>
+    <string name="help">Help</string>
+
+    <string-array name="howToTitles">
+        <item>Open words set</item>
+        <item>Create words set</item>
+        <item>Edit words set</item>
+        <item>Delete words set</item>
+        <item>Rename words set</item>
+        <item>Add a word</item>
+        <item>Edit a word</item>
+        <item>Delete a word</item>
+    </string-array>
+    <string-array name="howToContent">
+        <item>Press android menu button and select -Available words sets- menu item.
+            Then click words set title you want to learn.
+        </item>
+        <item>Press android menu button and select -Create words set- menu item.
+            Then give your new words set a title and press -save- button.
+            Then you may create words pairs or rename words set.
+            Press -Save words set- after setting all words pairs you want.
+        </item>
+        <item>Press android menu button and select -Available words sets- menu item.
+            Then long click on set title you want to edit until you will see context menu.
+            Select -edit- menu item.
+        </item>
+        <item>Press android menu button and select -Available words sets- menu item.
+            Then long click on set title you want to edit until you will see context menu.
+            Select -delete- menu item.
+        </item>
+        <item>Press android menu button and select -Available words sets- menu item.
+            Then long click on set title you want to edit until you will see context menu.
+            Select -edit- menu item. Then press -Rename set- button
+        </item>
+        <item>Press android menu button and select -Available words sets- menu item.
+            Then long click on set title you want to edit until you will see context menu.
+            Select -edit- menu item. Then click on -New word- button
+        </item>
+        <item>Press android menu button and select -Available words sets- menu item.
+            Then long click on set title you want to edit until you will see context menu.
+            Select -edit- menu item. Then click on word you want to edit.
+        </item>
+        <item>Press android menu button and select -Available words set- menu item.
+            Then long click on set title you want to edit until you will see context menu.
+            Select -edit- menu item. Then long click on word you want to delete until you will see context menu open.
+            Click on delete menu item.
+        </item>
+    </string-array>
 </resources>
