@@ -4,9 +4,16 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="@string/how_to"
+              android:background="#ffff902b"
+              android:gravity="center"
+              android:textSize="20sp"/>
     <ExpandableListView android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:id="@+id/howToELV"
+                        android:cacheColorHint="#ffba42"
                         android:background="#ffba42">
     </ExpandableListView>
 </LinearLayout>

@@ -15,6 +15,7 @@
             android:id="@+id/lvWordSets"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:cacheColorHint="#ffba42"
             android:background="#ffba42">
     </ListView>
 </LinearLayout>
