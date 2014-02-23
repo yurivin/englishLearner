@@ -39,8 +39,8 @@
     <string name="new_word">New word</string>
     <string name="no_wordsSets">No words sets found. Create a new words set?</string>
     <string name="no_delete_two_words">Cannot delete when words set contains only two words</string>
-    <string name="how_to">How to ...</string>
     <string name="help">Help</string>
+    <string name="no_sets_opened">No one words set opened</string>
 
     <string-array name="howToTitles">
         <item>Open words set</item>

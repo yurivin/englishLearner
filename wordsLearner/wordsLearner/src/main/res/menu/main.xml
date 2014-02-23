@@ -20,6 +20,6 @@
           android:title="@string/learn"
           android:orderInCategory="5" />
     <item android:id="@+id/HowToMI"
-          android:title="@string/how_to"
+          android:title="@string/help"
           android:orderInCategory="6" />
 </menu>
