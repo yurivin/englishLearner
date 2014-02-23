@@ -53,11 +53,11 @@ public class AvailableWordSets extends ContextMenuDeleteEditActivity {
         switch (item.getItemId()) {
             case R.id.deleteCM:
                 DbService.deleteWordSet(this, wordSetNames[info.position]);
-                Log.d("deleted wordsSet : ", wordSetNames[info.position]);
+//                Log.d("deleted wordsSet : ", wordSetNames[info.position]);
                 showWordsSets();
                 break;
             case R.id.editCM:
-                Log.d("Words set to change", wordSetNames[info.position]);
+//                Log.d("Words set to change", wordSetNames[info.position]);
                 intent = new Intent(this, EditWordsSet.class);
                 intent.putExtra("wordSetTitle", wordSetNames[info.position]);
                 startActivity(intent);
@@ -71,7 +71,7 @@ public class AvailableWordSets extends ContextMenuDeleteEditActivity {
     private void showWordsSets() {
         wordSetNames = DbService.getAllWordSetNames(this);
         if (!checkSetsExistence()) {
-            LogUtils.debugForCycleLog("Word set Names from db: ", wordSetNames);
+//            LogUtils.debugForCycleLog("Word set Names from db: ", wordSetNames);
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, wordSetNames);
             lvWordSets.setAdapter(adapter);
         }
