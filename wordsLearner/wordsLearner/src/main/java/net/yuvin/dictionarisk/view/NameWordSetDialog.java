@@ -1,13 +1,12 @@
-package com.example.wordslearner.view;
+package net.yuvin.dictionarisk.view;
 
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import com.example.wordslearner.R;
+import net.yuvin.dictionarisk.R;
 
 /**
  * Created by Юрий on 19.01.14.

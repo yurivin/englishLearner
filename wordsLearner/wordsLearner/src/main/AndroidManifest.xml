@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.wordslearner"
+    package="net.yuvin.dictionarisk"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -11,12 +11,13 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:debuggable="false"
         android:allowBackup="true"
         android:icon="@drawable/dictionary"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.wordslearner.view.MainActivity"
+            android:name="net.yuvin.dictionarisk.view.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -25,45 +26,45 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.wordslearner.view.NewWordSet"
+        <activity android:name="net.yuvin.dictionarisk.view.NewWordSet"
                   android:screenOrientation="portrait">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.wordslearner.view.NameWordSetDialog"
+            android:name="net.yuvin.dictionarisk.view.NameWordSetDialog"
             android:theme="@android:style/Theme.Dialog"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="com.example.wordslearner.view.WordSetCreatedDialog"
+            android:name="net.yuvin.dictionarisk.view.WordSetCreatedDialog"
             android:theme="@android:style/Theme.Dialog"
             android:screenOrientation="portrait">
         </activity>
         <activity
-                android:name="com.example.wordslearner.view.EditWord"
+                android:name="net.yuvin.dictionarisk.view.EditWord"
                 android:theme="@android:style/Theme.Dialog"
                 android:screenOrientation="portrait">
         </activity>
-        <activity android:name="com.example.wordslearner.view.AvailableWordSets"
+        <activity android:name="net.yuvin.dictionarisk.view.AvailableWordSets"
                   android:screenOrientation="portrait">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.wordslearner.view.EditWordsSet"
+        <activity android:name="net.yuvin.dictionarisk.view.EditWordsSet"
                   android:screenOrientation="portrait">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.wordslearner.view.BaseActivity"
+            android:name="net.yuvin.dictionarisk.view.BaseActivity"
             android:label="@string/title_activity_base"
             android:screenOrientation="portrait" >
         </activity>
-        <activity android:name="com.example.wordslearner.view.HowTo"
+        <activity android:name="net.yuvin.dictionarisk.view.HowTo"
                   android:screenOrientation="portrait">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />

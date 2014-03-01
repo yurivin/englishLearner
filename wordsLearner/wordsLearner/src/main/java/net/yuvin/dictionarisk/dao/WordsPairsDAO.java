@@ -1,10 +1,10 @@
-package com.example.wordslearner.dao;
+package net.yuvin.dictionarisk.dao;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import com.example.wordslearner.model.Word;
+import net.yuvin.dictionarisk.model.Word;
 
 import java.util.*;
 

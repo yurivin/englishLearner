@@ -1,22 +1,20 @@
-package com.example.wordslearner.view;
+package net.yuvin.dictionarisk.view;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import com.example.wordslearner.utils.LogUtils;
-import com.example.wordslearner.R;
-import com.example.wordslearner.utils.ValidationUtils;
-import com.example.wordslearner.dao.DbService;
+import net.yuvin.dictionarisk.R;
+import net.yuvin.dictionarisk.dao.DbService;
+import net.yuvin.dictionarisk.utils.ValidationUtils;
 
 /**
  * Created by Юрий on 24.01.14.

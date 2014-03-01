@@ -1,9 +1,9 @@
-package com.example.wordslearner.view;
+package net.yuvin.dictionarisk.view;
 
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.View;
-import com.example.wordslearner.R;
+import net.yuvin.dictionarisk.R;
 
 /**
  * Created by Юрий on 16.02.14.

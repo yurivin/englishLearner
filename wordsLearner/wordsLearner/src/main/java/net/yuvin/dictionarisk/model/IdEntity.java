@@ -1,4 +1,4 @@
-package com.example.wordslearner.model;
+package net.yuvin.dictionarisk.model;
 
 /**
  * Created by Юрий on 28.01.14.

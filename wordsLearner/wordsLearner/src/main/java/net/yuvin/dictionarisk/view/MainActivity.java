@@ -1,4 +1,4 @@
-package com.example.wordslearner.view;
+package net.yuvin.dictionarisk.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,9 +10,9 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.example.wordslearner.R;
-import com.example.wordslearner.dao.DbService;
-import com.example.wordslearner.words.WordsService;
+import net.yuvin.dictionarisk.R;
+import net.yuvin.dictionarisk.dao.DbService;
+import net.yuvin.dictionarisk.words.WordsService;
 import com.google.android.gms.ads.*;
 
 import java.util.Calendar;

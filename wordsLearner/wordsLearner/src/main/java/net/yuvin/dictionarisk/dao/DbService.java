@@ -1,7 +1,7 @@
-package com.example.wordslearner.dao;
+package net.yuvin.dictionarisk.dao;
 
 import android.content.Context;
-import com.example.wordslearner.model.Word;
+import net.yuvin.dictionarisk.model.Word;
 
 import java.util.List;
 import java.util.Map;

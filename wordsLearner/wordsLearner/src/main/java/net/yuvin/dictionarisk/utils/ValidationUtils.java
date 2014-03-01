@@ -1,7 +1,6 @@
-package com.example.wordslearner.utils;
+package net.yuvin.dictionarisk.utils;
 
 import android.widget.EditText;
-import com.example.wordslearner.R;
 
 import java.util.Collection;
 

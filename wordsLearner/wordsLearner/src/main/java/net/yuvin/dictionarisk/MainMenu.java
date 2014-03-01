@@ -1,12 +1,12 @@
-package com.example.wordslearner;
+package net.yuvin.dictionarisk;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.view.MenuItem;
-import com.example.wordslearner.view.AvailableWordSets;
-import com.example.wordslearner.view.HowTo;
-import com.example.wordslearner.view.MainActivity;
-import com.example.wordslearner.view.NewWordSet;
+import net.yuvin.dictionarisk.view.AvailableWordSets;
+import net.yuvin.dictionarisk.view.HowTo;
+import net.yuvin.dictionarisk.view.MainActivity;
+import net.yuvin.dictionarisk.view.NewWordSet;
 
 /**
  * Created by Юрий on 27.01.14.

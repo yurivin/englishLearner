@@ -1,7 +1,6 @@
-package com.example.wordslearner.utils;
+package net.yuvin.dictionarisk.utils;
 
 import android.util.Log;
-import com.example.wordslearner.utils.ValidationUtils;
 
 /**
  * Created by Юрий on 25.01.14.

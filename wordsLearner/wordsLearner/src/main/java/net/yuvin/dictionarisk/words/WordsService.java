@@ -1,6 +1,4 @@
-package com.example.wordslearner.words;
-
-import com.example.wordslearner.words.WordsCollection;
+package net.yuvin.dictionarisk.words;
 
 import java.util.Map;
 

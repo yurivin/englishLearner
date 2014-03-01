@@ -1,10 +1,10 @@
-package com.example.wordslearner.view;
+package net.yuvin.dictionarisk.view;
 
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.widget.ExpandableListView;
 import android.widget.SimpleExpandableListAdapter;
-import com.example.wordslearner.R;
+import net.yuvin.dictionarisk.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;

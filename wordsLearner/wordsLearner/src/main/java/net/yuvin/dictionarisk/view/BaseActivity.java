@@ -1,18 +1,11 @@
-package com.example.wordslearner.view;
+package net.yuvin.dictionarisk.view;
 
 import android.app.Activity;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
-import com.example.wordslearner.MainMenu;
-import com.example.wordslearner.R;
+import net.yuvin.dictionarisk.MainMenu;
+import net.yuvin.dictionarisk.R;
 
 public class BaseActivity extends Activity {
 

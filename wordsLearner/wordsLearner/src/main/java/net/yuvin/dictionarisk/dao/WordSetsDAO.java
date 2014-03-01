@@ -1,4 +1,4 @@
-package com.example.wordslearner.dao;
+package net.yuvin.dictionarisk.dao;
 
 import android.content.ContentValues;
 import android.database.Cursor;

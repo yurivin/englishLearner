@@ -1,7 +1,5 @@
-package com.example.wordslearner.view;
+package net.yuvin.dictionarisk.view;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -9,9 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import com.example.wordslearner.R;
-import com.example.wordslearner.dao.DbService;
-import com.example.wordslearner.utils.ValidationUtils;
+import net.yuvin.dictionarisk.R;
+import net.yuvin.dictionarisk.dao.DbService;
+import net.yuvin.dictionarisk.utils.ValidationUtils;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package com.example.wordslearner.words;
+package net.yuvin.dictionarisk.words;
 
 import java.util.*;
 

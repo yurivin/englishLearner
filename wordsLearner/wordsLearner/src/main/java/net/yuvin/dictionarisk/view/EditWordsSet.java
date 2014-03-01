@@ -1,16 +1,14 @@
-package com.example.wordslearner.view;
+package net.yuvin.dictionarisk.view;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.*;
-import com.example.wordslearner.R;
-import com.example.wordslearner.dao.DbService;
-import com.example.wordslearner.model.Word;
-import com.example.wordslearner.utils.ValidationUtils;
+import net.yuvin.dictionarisk.R;
+import net.yuvin.dictionarisk.dao.DbService;
+import net.yuvin.dictionarisk.model.Word;
 
 import java.util.ArrayList;
 import java.util.HashMap;
