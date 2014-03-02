@@ -116,13 +116,14 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 
     private Map.Entry<String, String> setNewWord(Map.Entry<String, String> word) {
         englishWord.setText(word.getKey());
-        translation.setText(word.getValue());
+        translation.setText(WordsService.getRandomValue());
 
-        if (new Random().nextInt(2) + Calendar.getInstance().getTimeInMillis() % 2 == 1)
-            translation.setText(WordsService.getRandomValue());
+        if (new Random().nextInt(2) + Calendar.getInstance().getTimeInMillis() % 2 == 1 &&
+                new Random().nextInt(2) + Calendar.getInstance().getTimeInMillis() % 2 == 1)
+            translation.setText(word.getValue());
 
-        Log.d("UI word", word.toString());
-        Log.d("WordsCollection word", WordsService.getCurrentWord().toString());
+//        Log.d("UI word", word.toString());
+//        Log.d("WordsCollection word", WordsService.getCurrentWord().toString());
         return word;
     }
 
