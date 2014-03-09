@@ -67,12 +67,12 @@ public class NewWordSet extends BaseActivity implements OnClickListener {
         toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
 
         switch (view.getId()) {
-            case R.id.btnRename :
+            case R.id.btnRename:
                 intent = new Intent(this, NameWordSetDialog.class);
                 startActivityForResult(intent, 1);
                 break;
-            case R.id.btnSaveWord :
-                if(ValidationUtils.checkUserTextEmptiness(foreignET) || ValidationUtils.checkUserTextEmptiness(translationET)){
+            case R.id.btnSaveWord:
+                if (ValidationUtils.checkUserTextEmptiness(foreignET) || ValidationUtils.checkUserTextEmptiness(translationET)) {
                     toast.setText(getString(R.string.incorrect_value));
                     toast.show();
                     return;
@@ -84,8 +84,13 @@ public class NewWordSet extends BaseActivity implements OnClickListener {
                 toast.show();
                 break;
             case R.id.btnSaveWordSet:
-                if(wordSet.size() == 1){
+                if (wordSet.size() == 1) {
                     toast.setText("Word set contains 1 element. Please, make more elements");
+                    toast.show();
+                    return;
+                }
+                if (wordSetTitle == null || wordSetTitle.isEmpty()) {
+                    toast.setText(R.string.empty_title_not_allowed);
                     toast.show();
                     return;
                 }

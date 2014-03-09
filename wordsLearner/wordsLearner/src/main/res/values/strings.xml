@@ -41,6 +41,7 @@
     <string name="no_delete_two_words">Cannot delete when words set contains only two words</string>
     <string name="help">Help</string>
     <string name="no_sets_opened">No one words set opened</string>
+    <string name="empty_title_not_allowed">Empty title not allowed</string>
 
     <string-array name="howToTitles">
         <item>Open words set</item>

@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 import net.yuvin.dictionarisk.R;
+import net.yuvin.dictionarisk.utils.ValidationUtils;
 
 /**
  * Created by Юрий on 19.01.14.
@@ -33,9 +35,13 @@ public class NameWordSetDialog extends Activity implements View.OnClickListener 
         switch(view.getId()){
             case R.id.btnSaveTitle :
                 Intent intent = new Intent();
+                if(!ValidationUtils.checkUserTextEmptiness(wordSetTitleET)){
                 intent.putExtra("wordSetTitle", wordSetTitleET.getText().toString());
                 setResult(RESULT_OK , intent);
                 finish();
+                } else {
+                    Toast.makeText(this, R.string.type_title_here, Toast.LENGTH_LONG).show();
+                }
                 break;
         }
     }

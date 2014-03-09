@@ -38,5 +38,6 @@
     <string name="no_delete_two_words">Ne peut être retiré quand il ya seulement deux mots</string>
     <string name="help">Assistance</string>
     <string name="no_sets_opened">Pas de mots ouverts</string>
+    <string name="empty_title_not_allowed">Titre vide n est pas permis ici</string>
 
 </resources>
