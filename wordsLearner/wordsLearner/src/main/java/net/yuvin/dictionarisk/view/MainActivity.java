@@ -68,10 +68,20 @@ public class MainActivity extends BaseActivity implements OnClickListener {
                 if (intent.getExtras().containsKey("wordSetTitle")) {
                     String wordsSetTitle = intent.getStringExtra("wordSetTitle");
                     WordsService.initializeWords(DbService.getWordPairs(this, wordsSetTitle));
+                } else {
+                    availableWordSets();
                 }
+            } else {
+                availableWordSets();
             }
         }
         setNewWord(WordsService.getNewWord());
+    }
+
+    private void availableWordSets() {
+        intent = new Intent(this, AvailableWordSets.class);
+        startActivity(intent);
+        finish();
     }
 
     @Override
