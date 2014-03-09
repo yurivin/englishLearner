@@ -84,8 +84,13 @@ public class NewWordSet extends BaseActivity implements OnClickListener {
                 toast.show();
                 break;
             case R.id.btnSaveWordSet:
+                if (wordSet.size() == 0) {
+                    toast.setText(R.string.no_words_in_set);
+                    toast.show();
+                    return;
+                }
                 if (wordSet.size() == 1) {
-                    toast.setText("Word set contains 1 element. Please, make more elements");
+                    toast.setText(R.string.only_one_element);
                     toast.show();
                     return;
                 }

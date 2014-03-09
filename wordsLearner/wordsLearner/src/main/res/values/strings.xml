@@ -42,6 +42,8 @@
     <string name="help">Help</string>
     <string name="no_sets_opened">No one words set opened</string>
     <string name="empty_title_not_allowed">Empty title not allowed</string>
+    <string name="only_one_element">Word set cannot contain only one word</string>
+    <string name="no_words_in_set">Word set cannot contain no words</string>
 
     <string-array name="howToTitles">
         <item>Open words set</item>

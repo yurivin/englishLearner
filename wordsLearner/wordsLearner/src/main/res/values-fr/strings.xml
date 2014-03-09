@@ -39,5 +39,7 @@
     <string name="help">Assistance</string>
     <string name="no_sets_opened">Pas de mots ouverts</string>
     <string name="empty_title_not_allowed">Titre vide n est pas permis ici</string>
+    <string name="only_one_element">Ensemble de mots ne peut pas contenir un seul mot</string>
+    <string name="no_words_in_set">Collection de mots ne peut pas être vide</string>
 
 </resources>
