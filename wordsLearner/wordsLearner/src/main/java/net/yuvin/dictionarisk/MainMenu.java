@@ -3,10 +3,7 @@ package net.yuvin.dictionarisk;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.MenuItem;
-import net.yuvin.dictionarisk.view.AvailableWordSets;
-import net.yuvin.dictionarisk.view.HowTo;
-import net.yuvin.dictionarisk.view.MainActivity;
-import net.yuvin.dictionarisk.view.NewWordSet;
+import net.yuvin.dictionarisk.view.*;
 
 /**
  * Created by Юрий on 27.01.14.
@@ -46,6 +43,11 @@ public class MainMenu {
                 break;
             case R.id.HowToMI:
                 intent = new Intent(activity, HowTo.class);
+                activity.startActivity(intent);
+                activity.finish();
+                break;
+            case R.id.Langs:
+                intent = new Intent(activity, YandexDictionaryActivity.class);
                 activity.startActivity(intent);
                 activity.finish();
                 break;

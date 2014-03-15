@@ -21,8 +21,9 @@ import java.util.Random;
 
 public class MainActivity extends BaseActivity implements OnClickListener {
 
-    private AdView adView;
-    private static final String MY_AD_UNIT_ID = "ca-app-pub-4177483396427496/5919715969";
+//    private AdView adView;
+//    Account AdSence blocked so this code not works
+//    private static final String MY_AD_UNIT_ID = "ca-app-pub-4177483396427496/5919715969";
     private Intent intent;
     private TextView englishWord, translation, scoreView;
     private Button btnYes, btnNo, btnHelp;
@@ -47,12 +48,12 @@ public class MainActivity extends BaseActivity implements OnClickListener {
         btnNo = (Button) findViewById(R.id.no);
         btnHelp = (Button) findViewById(R.id.helpBtn);
 
-        adView = new AdView(this);
-        adView.setAdUnitId(MY_AD_UNIT_ID);
-        adView.setAdSize(AdSize.BANNER);
-        container.addView(adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
+//        adView = new AdView(this);
+//        adView.setAdUnitId(MY_AD_UNIT_ID);
+//       adView.setAdSize(AdSize.BANNER);
+//        container.addView(adView);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        adView.loadAd(adRequest);
 
         btnYes.setOnClickListener(this);
         btnNo.setOnClickListener(this);
@@ -60,7 +61,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
         toast = Toast.makeText(this, "", Toast.LENGTH_LONG);
         toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
 
-        scoreView.setText("Score: " + scoreNum);
+        scoreView.setText(R.string.score + scoreNum);
 
         if (getIntent() != null) {
             intent = getIntent();
@@ -139,19 +140,19 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 
     @Override
     public void onPause() {
-        adView.pause();
+//        adView.pause();
         super.onPause();
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        adView.resume();
+//        adView.resume();
     }
 
     @Override
     public void onDestroy() {
-        adView.destroy();
+//        adView.destroy();
         super.onDestroy();
     }
 }
