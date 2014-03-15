@@ -4,9 +4,9 @@
     <item android:id="@+id/availableWordSetsMI"
         android:title="@string/availableWordSets"
         android:orderInCategory="0" />
-    <!--    <item android:id="@+id/downloadWordSetMI"
+    <item android:id="@+id/downloadWordSetMI"
           android:title="@string/downloadWordSet"
-          android:orderInCategory="1" /> -->
+          android:orderInCategory="1" />
     <item android:id="@+id/createWordSetMI"
           android:title="@string/createWordSet"
           android:orderInCategory="2" />

@@ -41,6 +41,9 @@
     <string name="empty_title_not_allowed">Titre vide n est pas permis ici</string>
     <string name="only_one_element">Ensemble de mots ne peut pas contenir un seul mot</string>
     <string name="no_words_in_set">Collection de mots ne peut pas être vide</string>
+    <string name="download_properties">Télécharger Propriétés</string>
+    <string name="Language_properties">Propriétés de la langue</string>
+    <string name="download_Translations">Entrez les mots et téléchargez les traductions</string>
 
     <string-array name="howToTitles">
         <item>Comment ouvrir la collection de mots</item>

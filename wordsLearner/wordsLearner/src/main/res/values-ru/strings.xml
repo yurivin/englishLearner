@@ -41,6 +41,9 @@
     <string name="empty_title_not_allowed">Название не должно быть пустым</string>
     <string name="only_one_element">Нельзя создавать набор из одного слова</string>
     <string name="no_words_in_set">Набор слов не может быть пустым</string>
+    <string name="download_properties">Настройки загрузки</string>
+    <string name="Language_properties">Настройки языков</string>
+    <string name="download_Translations">Ввести слова и загрузить переводы</string>
 
     <string-array name="howToTitles">
         <item>Открыть набор слов</item>

@@ -25,8 +25,11 @@ public class MainMenu {
                 activity.startActivity(intent);
                 activity.finish();
                 break;
-//            case R.id.downloadWordSetMI:
-//                break;
+            case R.id.downloadWordSetMI:
+                intent = new Intent(activity, DownloadWodsSetProperties.class);
+                activity.startActivity(intent);
+                activity.finish();
+                break;
             case R.id.createWordSetMI:
                 intent = new Intent(activity, NewWordSet.class);
                 activity.startActivity(intent);
