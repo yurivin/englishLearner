@@ -4,18 +4,18 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="#ffba42">
+              android:background="@color/background">
     <TextView android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:text="@string/availableWordSets"
-              android:background="#ffff902b"
+              android:background="@color/header"
               android:gravity="center"
               android:textSize="20sp"/>
     <ListView
             android:id="@+id/lvWordSets"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:cacheColorHint="#ffba42"
-            android:background="#ffba42">
+            android:cacheColorHint="@color/background"
+            android:background="@color/background">
     </ListView>
 </LinearLayout>

@@ -4,7 +4,7 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="#ffff902b">
+              android:background="@color/header">
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -17,14 +17,14 @@
     <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:background="#ffba42">
+            android:background="@color/background">
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/type_title_here"
                 android:textSize="30sp"
                 android:gravity="center"
-                android:background="#ffffa701"
+                android:background="@color/editText"
                 android:id="@+id/wordSetTitleET"
                 android:layout_centerInParent="true"/>
         <Button
@@ -33,7 +33,7 @@
                 android:layout_height="50dp"
                 android:text="@string/save"
                 android:textSize="20sp"
-                android:background="#ffde6f09"
+                android:background="@color/button"
                 android:id="@+id/btnSaveTitle"
                 android:layout_centerVertical="true" />
     </RelativeLayout>

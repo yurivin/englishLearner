@@ -7,13 +7,13 @@
     <TextView android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:text="@string/help"
-              android:background="#ffff902b"
+              android:background="@color/header"
               android:gravity="center"
               android:textSize="20sp"/>
     <ExpandableListView android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:id="@+id/howToELV"
-                        android:cacheColorHint="#ffba42"
-                        android:background="#ffba42">
+                        android:cacheColorHint="@color/background"
+                        android:background="@color/background">
     </ExpandableListView>
 </LinearLayout>

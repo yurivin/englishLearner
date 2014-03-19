@@ -4,7 +4,7 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="#ffff902b">
+              android:background="@color/header">
 
     <TextView
             android:layout_width="wrap_content"
@@ -17,7 +17,7 @@
     <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:background="#ffba42">
+            android:background="@color/background">
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="30sp"
                 android:gravity="center"
-                android:background="#ffffa701"
+                android:background="@color/editText"
                 android:id="@+id/foreignWordET"
                 android:layout_below="@+id/foreignWordTV"/>
         <TextView
@@ -48,7 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="30sp"
-                android:background="#ffffa701"
+                android:background="@color/editText"
                 android:gravity="center"
                 android:id="@+id/translationET"
                 android:layout_below="@+id/translationTV"
@@ -57,7 +57,7 @@
                 android:layout_height="50dp"
                 android:text="@string/rename"
                 android:textSize="20sp"
-                android:background="#ffde6f09"
+                android:background="@color/button"
                 android:id="@+id/btnRename"
                 android:layout_above="@+id/btnSaveWord"/>
        <Button
@@ -65,7 +65,7 @@
                 android:layout_height="50dp"
                 android:text="@string/save_word"
                 android:textSize="20sp"
-                android:background="#ffde6f09"
+                android:background="@color/button"
                 android:id="@+id/btnSaveWord"
                 android:layout_marginTop="10dp"
                 android:layout_above="@+id/btnSaveWordSet"
@@ -75,7 +75,7 @@
                 android:layout_height="50dp"
                 android:text="@string/save_word_set"
                 android:textSize="20sp"
-                android:background="#ffde6f09"
+                android:background="@color/button"
                 android:layout_marginTop="10dp"
                 android:layout_alignParentBottom="true"
                 android:id="@+id/btnSaveWordSet" />

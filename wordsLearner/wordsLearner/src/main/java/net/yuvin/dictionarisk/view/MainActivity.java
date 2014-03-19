@@ -2,18 +2,15 @@ package net.yuvin.dictionarisk.view;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import net.yuvin.dictionarisk.R;
 import net.yuvin.dictionarisk.dao.DbService;
 import net.yuvin.dictionarisk.words.WordsService;
-import com.google.android.gms.ads.*;
 
 import java.util.Calendar;
 import java.util.Map;
@@ -21,13 +18,9 @@ import java.util.Random;
 
 public class MainActivity extends BaseActivity implements OnClickListener {
 
-//    private AdView adView;
-//    Account AdSence blocked so this code not works
-//    private static final String MY_AD_UNIT_ID = "ca-app-pub-4177483396427496/5919715969";
     private Intent intent;
     private TextView englishWord, translation, scoreView;
     private Button btnYes, btnNo, btnHelp;
-    private FrameLayout container;
     private Toast toast;
     private int scoreNum;
 
@@ -40,20 +33,12 @@ public class MainActivity extends BaseActivity implements OnClickListener {
         }
         scoreNum = 0;
 
-        container = (FrameLayout) findViewById(R.id.container);
         englishWord = (TextView) findViewById(R.id.foreignWord);
         translation = (TextView) findViewById(R.id.translation);
         scoreView = (TextView) findViewById(R.id.score);
         btnYes = (Button) findViewById(R.id.yes);
         btnNo = (Button) findViewById(R.id.no);
         btnHelp = (Button) findViewById(R.id.helpBtn);
-
-//        adView = new AdView(this);
-//        adView.setAdUnitId(MY_AD_UNIT_ID);
-//       adView.setAdSize(AdSize.BANNER);
-//        container.addView(adView);
-//        AdRequest adRequest = new AdRequest.Builder().build();
-//        adView.loadAd(adRequest);
 
         btnYes.setOnClickListener(this);
         btnNo.setOnClickListener(this);
@@ -136,23 +121,5 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 //        Log.d("UI word", word.toString());
 //        Log.d("WordsCollection word", WordsService.getCurrentWord().toString());
         return word;
-    }
-
-    @Override
-    public void onPause() {
-//        adView.pause();
-        super.onPause();
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-//        adView.resume();
-    }
-
-    @Override
-    public void onDestroy() {
-//        adView.destroy();
-        super.onDestroy();
     }
 }

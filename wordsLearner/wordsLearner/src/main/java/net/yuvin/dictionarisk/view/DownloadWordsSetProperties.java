@@ -6,7 +6,7 @@ import net.yuvin.dictionarisk.R;
 /**
  * Created by Юрий on 15.03.14.
  */
-public class DownloadWodsSetProperties extends BaseActivity {
+public class DownloadWordsSetProperties extends BaseActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
