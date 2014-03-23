@@ -47,6 +47,13 @@
     <string name="download_properties">Download Properties</string>
     <string name="Language_properties">Language properties</string>
     <string name="download_Translations">Enter words and download the translations</string>
+    <string name="select_Collection">Select ready collection</string>
+    <string name="update_Languages">Update Available Languages</string>
+    <string name="download_content_properties">Content properties</string>
+    <string name="lets_go">Let\u0027s go!</string>
+    <string name="selectYourLanguage">Select your language</string>
+    <string name="selectLanguageToLearn">Select language to learn</string>
+    <string name="For">For:_</string>
 
     <string-array name="howToTitles">
         <item>Open words set</item>

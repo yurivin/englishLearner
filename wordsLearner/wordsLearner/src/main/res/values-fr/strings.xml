@@ -56,46 +56,46 @@
         <item>Supprimer un mot</item>
     </string-array>
     <string-array name="howToContent">
-        <item>Appuyer bouton de menu et sélectionner -Collections de mots- élément de menu.
-            Puis cliquez sur les titre de la collection que vous voulez apprendre.
-        </item>
-        <item>Appuyer bouton de menu et sélectionner ->Créer une collection de mots- élément de menu.
-            Ensuite, donner à votre nouvelle collection de mots d\u0027un titre et appuyez sur -économiser- bouton.
-            Ensuite, vous pouvez créer des mots paires ou renommer collection de mots.
-            Appuyer -économiser mots collection- après avoir défini tous les mots que vous voulez.
-        </item>
-        <item>Appuyer bouton de menu et sélectionner -Collections de mots- élément de menu.
-            Puis cliquez longtemps sur le titre de la collection que vous souhaitez modifier jusqu\u0027à
-            ce que vous verrez le menu contextuel.
-            Sélectionnez -Modifier- élément de menu.
-        </item>
-        <item>Appuyer bouton de menu et sélectionner -Collections de mots- élément de menu.
-            Puis cliquez longtemps sur le titre de la collection que vous souhaitez modifier jusqu\u0027à
-            ce que vous verrez le menu contextuel.
-            Sélectionnez -Effacer- élément de menu.
-        </item>
-        <item>Appuyer bouton de menu et sélectionner -Collections de mots- élément de menu.
-            Puis cliquez longtemps sur le titre de la collection que vous souhaitez modifier
-            jusqu\u0027à ce que vous verrez le menu contextuel.
-            Sélectionnez -Modifier- élément de menu. Ensuite, appuyez sur -Renommer- bouton.
-        </item>
-        <item>Appuyer bouton de menu et sélectionner -Available words sets- élément de menu.
-            Puis cliquez longtemps sur le titre de la collection que vous souhaitez modifier
-            jusqu\u0027à ce que vous verrez le menu contextuel.
-            Sélectionnez -Modifier- élément de menu. Ensuite, appuyez sur -Nouveau mot- bouton.
-        </item>
-        <item>Appuyer bouton de menu et sélectionner -Available words sets- élément de menu.
-            Puis cliquez longtemps sur le titre de la collection que vous souhaitez modifier
-            jusqu\u0027à ce que vous verrez le menu contextuel.
-            Sélectionnez -Modifier- élément de menu. Puis cliquez sur le mot que vous souhaitez modifier.
-        </item>
-        <item>Appuyer bouton de menu et sélectionner -Available words set- élément de menu.
-            Puis cliquez longtemps sur le titre de la collection que vous souhaitez modifier
-            jusqu\u0027à ce que vous verrez le menu contextuel.
-            Sélectionnez -Modifier- élément de menu.  Puis cliquez longtemps sur le mot
-            vous souhaitez modifier jusqu\u0027à ce que vous verrez le menu contextuel.
-            Sélectionnez -Effacer- élément de menu.
-        </item>
+            <item>Appuyer bouton de menu et sélectionner -Collections de mots- élément de menu.
+                Puis cliquez sur les titre de la collection que vous voulez apprendre.
+            </item>
+            <item>Appuyer bouton de menu et sélectionner ->Créer une collection de mots- élément de menu.
+                Ensuite, donner à votre nouvelle collection de mots d\u0027un titre et appuyez sur -économiser- bouton.
+                Ensuite, vous pouvez créer des mots paires ou renommer collection de mots.
+                Appuyer -économiser mots collection- après avoir défini tous les mots que vous voulez.
+            </item>
+            <item>Appuyer bouton de menu et sélectionner -Collections de mots- élément de menu.
+                Puis cliquez longtemps sur le titre de la collection que vous souhaitez modifier jusqu\u0027à
+                ce que vous verrez le menu contextuel.
+                Sélectionnez -Modifier- élément de menu.
+            </item>
+            <item>Appuyer bouton de menu et sélectionner -Collections de mots- élément de menu.
+                Puis cliquez longtemps sur le titre de la collection que vous souhaitez modifier jusqu\u0027à
+                ce que vous verrez le menu contextuel.
+                Sélectionnez -Effacer- élément de menu.
+            </item>
+            <item>Appuyer bouton de menu et sélectionner -Collections de mots- élément de menu.
+                Puis cliquez longtemps sur le titre de la collection que vous souhaitez modifier
+                jusqu\u0027à ce que vous verrez le menu contextuel.
+                Sélectionnez -Modifier- élément de menu. Ensuite, appuyez sur -Renommer- bouton.
+            </item>
+            <item>Appuyer bouton de menu et sélectionner -Available words sets- élément de menu.
+                Puis cliquez longtemps sur le titre de la collection que vous souhaitez modifier
+                jusqu\u0027à ce que vous verrez le menu contextuel.
+                Sélectionnez -Modifier- élément de menu. Ensuite, appuyez sur -Nouveau mot- bouton.
+            </item>
+            <item>Appuyer bouton de menu et sélectionner -Available words sets- élément de menu.
+                Puis cliquez longtemps sur le titre de la collection que vous souhaitez modifier
+                jusqu\u0027à ce que vous verrez le menu contextuel.
+                Sélectionnez -Modifier- élément de menu. Puis cliquez sur le mot que vous souhaitez modifier.
+            </item>
+            <item>Appuyer bouton de menu et sélectionner -Available words set- élément de menu.
+                Puis cliquez longtemps sur le titre de la collection que vous souhaitez modifier
+                jusqu\u0027à ce que vous verrez le menu contextuel.
+                Sélectionnez -Modifier- élément de menu.  Puis cliquez longtemps sur le mot
+                vous souhaitez modifier jusqu\u0027à ce que vous verrez le menu contextuel.
+                Sélectionnez -Effacer- élément de menu.
+            </item>
     </string-array>
 
 </resources>
