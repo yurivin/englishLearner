@@ -31,14 +31,6 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_below="@id/ddpLangProp"
-        android:text="@string/update_Languages"
-        android:background="@color/button"
-        android:id="@+id/btnUpdateLanguages"/>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_below="@id/btnUpdateLanguages"
         android:text="@string/selectYourLanguage"
         android:layout_marginTop="10dp"
         android:background="@color/button"

@@ -1,7 +1,5 @@
 package net.yuvin.dictionarisk.model;
 
-import net.yuvin.dictionarisk.enums.Languages;
-
 /**
  * Created by Юрий on 23.03.2014.
  */
@@ -11,8 +9,8 @@ public class WordSetProperties extends IdEntity {
 
     private Long wordSetId;
     private String title;
-    private Languages languageFrom;
-    private Languages languageTo;
+    private String languageFrom;
+    private String languageTo;
     private boolean custom;
 
     public boolean isCustom() {
@@ -39,21 +37,21 @@ public class WordSetProperties extends IdEntity {
         this.title = title;
     }
 
-    public Languages getLanguageFrom() {
-        if(languageFrom == null) return Languages.QUESTION;
+    public String getLanguageFrom() {
+        if(languageFrom == null) return QUESTION;
         return languageFrom;
     }
 
-    public void setLanguageFrom(Languages languageFrom) {
+    public void setLanguageFrom(String languageFrom) {
         this.languageFrom = languageFrom;
     }
 
-    public Languages getLanguageTo() {
-        if(languageFrom == null) return Languages.QUESTION;
+    public String getLanguageTo() {
+        if(languageFrom == null) return QUESTION;
         return languageTo;
     }
 
-    public void setLanguageTo(Languages languageTo) {
+    public void setLanguageTo(String languageTo) {
         this.languageTo = languageTo;
     }
 

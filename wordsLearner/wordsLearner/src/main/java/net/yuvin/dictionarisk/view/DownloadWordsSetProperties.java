@@ -1,9 +1,9 @@
 package net.yuvin.dictionarisk.view;
 
-import android.content.SharedPreferences;
 import android.net.http.AndroidHttpClient;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import net.yuvin.dictionarisk.R;
@@ -18,48 +18,40 @@ import org.json.JSONException;
 import org.json.JSONTokener;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by Юрий on 15.03.14.
  */
-public class DownloadWordsSetProperties extends BaseActivity implements View.OnClickListener{
+public class DownloadWordsSetProperties extends BaseActivity implements View.OnClickListener {
 
-    private Button btnUpdateLangs, btnSelectLangFrom,
+    private Button btnSelectLangFrom,
             btnSelectLangTo, btnDownloadTranslations,
             btnDownloadCollection, btnDownload;
-    SharedPreferences preferences;
     WordSetProperties collectionProperties = new WordSetProperties();
-    private static final String NO_LANGS_AVAILABLE = "";
-    private static final String SELECTED_LANGUAGES = "here should be selected languages";
+    protected Map<String, List<String>> languages = new HashMap<String, List<String>>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        new YandexDictionaryJSONGetTask().execute();
         setContentView(R.layout.downloadwordssetproperties);
 
-        btnDownloadTranslations = (Button)findViewById(R.id.downloadTranslations);
+        btnDownloadTranslations = (Button) findViewById(R.id.downloadTranslations);
         btnDownloadTranslations.setOnClickListener(this);
-        btnUpdateLangs = (Button)findViewById(R.id.btnUpdateLanguages);
-        btnUpdateLangs.setOnClickListener(this);
-        btnSelectLangFrom = (Button)findViewById(R.id.selectLanguageFrom);
+        btnSelectLangFrom = (Button) findViewById(R.id.selectLanguageFrom);
         btnSelectLangFrom.setOnClickListener(this);
-        btnSelectLangTo = (Button)findViewById(R.id.selectLanguageTo);
+        btnSelectLangTo = (Button) findViewById(R.id.selectLanguageTo);
         btnSelectLangTo.setOnClickListener(this);
-        btnDownloadCollection = (Button)findViewById(R.id.downloadCollection);
+        btnDownloadCollection = (Button) findViewById(R.id.downloadCollection);
         btnDownloadCollection.setOnClickListener(this);
-        btnDownload = (Button)findViewById(R.id.letDowload);
+        btnDownload = (Button) findViewById(R.id.letDowload);
         btnDownload.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        switch(v.getId()) {
-            case R.id.btnUpdateLanguages:
-                new YandexDictionaryJSONGetTask().execute();
-                break;
+        switch (v.getId()) {
             case R.id.downloadTranslations:
                 btnDownload.setText(getString(R.string.lets_go) + ": " +
                         getString(R.string.download_Translations) +
@@ -76,16 +68,8 @@ public class DownloadWordsSetProperties extends BaseActivity implements View.OnC
 
     private String getSetDetails() {
         return ". " + getString(R.string.For) +
-                collectionProperties.getLanguageFrom().getTitle() + "-" +
-                collectionProperties.getLanguageTo().getTitle();
-    }
-
-    private List<String> loadYandexLanguages() {
-        preferences = getPreferences(MODE_PRIVATE);
-        String yandexLanguages = preferences.getString("YandexLanguages", NO_LANGS_AVAILABLE);
-        if(yandexLanguages == "") return null;
-        return Arrays.asList(yandexLanguages.substring(1, yandexLanguages.length() - 1).split(", "));
-
+                collectionProperties.getLanguageFrom() + "-" +
+                collectionProperties.getLanguageTo();
     }
 
     private class YandexDictionaryJSONGetTask extends AsyncTask<Void, Void, List<String>> {
@@ -114,10 +98,22 @@ public class DownloadWordsSetProperties extends BaseActivity implements View.OnC
         protected void onPostExecute(List<String> result) {
             if (null != mClient)
                 mClient.close();
-            preferences = getPreferences(MODE_PRIVATE);
-            SharedPreferences.Editor editor = preferences.edit();
-            editor.putString("YandexLanguages", result.toString());
-            editor.commit();
+            parseLanguages(result);
+            Log.d("Languages in collection", languages.toString());
+        }
+
+        private void parseLanguages(List<String> result) {
+            String[] splitResult;
+            for (String entry : result) {
+                splitResult = entry.split("-", 2);
+                if (languages.containsKey(splitResult[0])) {
+                    languages.get(splitResult[0]).add(splitResult[1]);
+                } else {
+                       List<String> values = new ArrayList<String>();
+                       values.add(splitResult[1]);
+                    languages.put(splitResult[0],values);
+                }
+            }
         }
 
         private class JSONResponseHandler implements ResponseHandler<List<String>> {
@@ -127,11 +123,11 @@ public class DownloadWordsSetProperties extends BaseActivity implements View.OnC
                 String JSONResponse = new BasicResponseHandler()
                         .handleResponse(httpResponse);
                 try {
-//                    Log.d("JSON from Yandex", JSONResponse.toString());
+                    Log.d("JSON from Yandex", JSONResponse.toString());
                     JSONArray jsonArray = (JSONArray) new JSONTokener(
                             JSONResponse).nextValue();
 
-                    for(int i = 0; i < jsonArray.length(); i++){
+                    for (int i = 0; i < jsonArray.length(); i++) {
                         result.add(jsonArray.getString(i));
                     }
 
@@ -143,3 +139,4 @@ public class DownloadWordsSetProperties extends BaseActivity implements View.OnC
         }
     }
 }
+
