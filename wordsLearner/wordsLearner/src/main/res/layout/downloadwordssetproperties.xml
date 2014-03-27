@@ -19,16 +19,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/ddpHeader"
-        android:id="@+id/ddpLangProp"
-        android:text="@string/Language_properties"
-        android:background="@color/background"
-        android:gravity="center"
-        android:layout_marginBottom="10dp"
-        android:textSize="20sp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/ddpLangProp"
         android:id="@+id/twSelectYourLang"
         android:text="@string/selectYourLanguage"
         android:background="@color/background"
