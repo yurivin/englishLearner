@@ -15,7 +15,6 @@
         android:id="@+id/ddpHeader"
         android:layout_marginBottom="10dp"
         android:textSize="20sp"/>
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,20 +25,38 @@
         android:gravity="center"
         android:layout_marginBottom="10dp"
         android:textSize="20sp"/>
-
-    <Button
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ddpLangProp"
+        android:id="@+id/twSelectYourLang"
+        android:text="@string/selectYourLanguage"
+        android:background="@color/background"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"/>
+    <Spinner
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_below="@id/ddpLangProp"
-        android:text="@string/selectYourLanguage"
+        android:layout_below="@id/twSelectYourLang"
         android:layout_marginTop="10dp"
         android:background="@color/button"
         android:id="@+id/selectLanguageFrom"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/selectLanguageFrom"
+        android:id="@+id/twselectLanguageTo"
+        android:text="@string/selectLanguageToLearn"
+        android:background="@color/background"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"/>
 
-    <Button
+    <Spinner
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_below="@id/selectLanguageFrom"
+        android:layout_below="@id/twselectLanguageTo"
         android:layout_marginTop="10dp"
         android:text="@string/selectLanguageToLearn"
         android:background="@color/button"

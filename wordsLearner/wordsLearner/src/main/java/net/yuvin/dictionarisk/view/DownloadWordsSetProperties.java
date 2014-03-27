@@ -39,10 +39,6 @@ public class DownloadWordsSetProperties extends BaseActivity implements View.OnC
 
         btnDownloadTranslations = (Button) findViewById(R.id.downloadTranslations);
         btnDownloadTranslations.setOnClickListener(this);
-        btnSelectLangFrom = (Button) findViewById(R.id.selectLanguageFrom);
-        btnSelectLangFrom.setOnClickListener(this);
-        btnSelectLangTo = (Button) findViewById(R.id.selectLanguageTo);
-        btnSelectLangTo.setOnClickListener(this);
         btnDownloadCollection = (Button) findViewById(R.id.downloadCollection);
         btnDownloadCollection.setOnClickListener(this);
         btnDownload = (Button) findViewById(R.id.letDowload);
