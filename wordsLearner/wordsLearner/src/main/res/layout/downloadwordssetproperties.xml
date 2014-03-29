@@ -31,11 +31,11 @@
         android:layout_below="@id/twSelectYourLang"
         android:layout_marginTop="10dp"
         android:background="@color/button"
-        android:id="@+id/selectLanguageFrom"/>
+        android:id="@+id/spLanguageFrom"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/selectLanguageFrom"
+        android:layout_below="@id/spLanguageFrom"
         android:id="@+id/twselectLanguageTo"
         android:text="@string/selectLanguageToLearn"
         android:background="@color/background"
@@ -50,13 +50,13 @@
         android:layout_marginTop="10dp"
         android:text="@string/selectLanguageToLearn"
         android:background="@color/button"
-        android:id="@+id/selectLanguageTo"/>
+        android:id="@+id/spLanguageTo"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_below="@id/selectLanguageTo"
+        android:layout_below="@id/spLanguageTo"
         android:text="@string/download_content_properties"
         android:background="@color/background"
         android:gravity="center"

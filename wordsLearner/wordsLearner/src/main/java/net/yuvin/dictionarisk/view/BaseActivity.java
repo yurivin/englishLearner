@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import net.yuvin.dictionarisk.MainMenu;
+import net.yuvin.dictionarisk.utils.MainMenu;
 import net.yuvin.dictionarisk.R;
 
 public class BaseActivity extends Activity {

@@ -5,21 +5,11 @@ package net.yuvin.dictionarisk.model;
  */
 public class WordSetProperties extends IdEntity {
 
-    private static final String QUESTION= "?";
+    public static final String QUESTION= "?";
 
     private Long wordSetId;
-    private String title;
     private String languageFrom;
     private String languageTo;
-    private boolean custom;
-
-    public boolean isCustom() {
-        return custom;
-    }
-
-    public void setCustom(boolean custom) {
-        this.custom = custom;
-    }
 
     public Long getWordSetId() {
         return wordSetId;
@@ -27,14 +17,6 @@ public class WordSetProperties extends IdEntity {
 
     public void setWordSetId(Long wordSetId) {
         this.wordSetId = wordSetId;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     public String getLanguageFrom() {
@@ -47,7 +29,7 @@ public class WordSetProperties extends IdEntity {
     }
 
     public String getLanguageTo() {
-        if(languageFrom == null) return QUESTION;
+        if(languageTo == null) return QUESTION;
         return languageTo;
     }
 

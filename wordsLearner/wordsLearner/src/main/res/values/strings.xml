@@ -55,6 +55,8 @@
     <string name="selectLanguageToLearn">Select language to learn</string>
     <string name="For">For:_</string>
     <string name="loading_languages">Loading available languages</string>
+    <string name="downloading_languages">Downloading available languages</string>
+    <string name="error_downloading_languages">Error during downloading languages</string>
 
     <string-array name="howToTitles">
         <item>Open words set</item>

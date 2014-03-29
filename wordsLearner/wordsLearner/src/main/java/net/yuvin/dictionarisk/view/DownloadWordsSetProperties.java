@@ -1,11 +1,12 @@
 package net.yuvin.dictionarisk.view;
 
+import android.app.ProgressDialog;
 import android.net.http.AndroidHttpClient;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+import android.widget.*;
 import net.yuvin.dictionarisk.R;
 import net.yuvin.dictionarisk.model.WordSetProperties;
 import org.apache.http.HttpResponse;
@@ -25,15 +26,27 @@ import java.util.*;
  */
 public class DownloadWordsSetProperties extends BaseActivity implements View.OnClickListener {
 
-    private Button btnSelectLangFrom,
-            btnSelectLangTo, btnDownloadTranslations,
+    private enum DownloadActions {
+        Translations,
+        ReadyCollection;
+    }
+    private ProgressDialog pDialog;
+    private Spinner spLanguageFrom, spLanguageTo;
+    private Button btnDownloadTranslations,
             btnDownloadCollection, btnDownload;
-    WordSetProperties collectionProperties = new WordSetProperties();
+    private TextView twSelectLanguageFrom, twLanguageTo;
+    WordSetProperties wordSetProperties = new WordSetProperties();
     protected Map<String, List<String>> languages = new HashMap<String, List<String>>();
+    private static final String RUISO1 = "ru";
+    private  DownloadActions action;
+    String[] data;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        pDialog = new ProgressDialog(this);
+        pDialog.setTitle(R.string.downloading_languages);
+        pDialog.show();
         new YandexDictionaryJSONGetTask().execute();
         setContentView(R.layout.downloadwordssetproperties);
 
@@ -43,29 +56,106 @@ public class DownloadWordsSetProperties extends BaseActivity implements View.OnC
         btnDownloadCollection.setOnClickListener(this);
         btnDownload = (Button) findViewById(R.id.letDowload);
         btnDownload.setOnClickListener(this);
+        spLanguageFrom = (Spinner) findViewById(R.id.spLanguageFrom);
+        spLanguageTo = (Spinner) findViewById(R.id.spLanguageTo);
+        spLanguageFrom.setVisibility(View.GONE);
+        spLanguageTo.setVisibility(View.GONE);
+
+        twSelectLanguageFrom = (TextView) findViewById(R.id.twSelectYourLang);
+        twLanguageTo = (TextView) findViewById(R.id.twselectLanguageTo);
+        twSelectLanguageFrom.setText(getString(R.string.downloading_languages));
+        twLanguageTo.setVisibility(View.GONE);
+
+        spLanguageFrom.setOnItemSelectedListener(new OnItemSelectedListenerFrom());
+        spLanguageTo.setOnItemSelectedListener(new OnItemSelectedListenerTo());
+
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.downloadTranslations:
-                btnDownload.setText(getString(R.string.lets_go) + ": " +
-                        getString(R.string.download_Translations) +
-                        getSetDetails());
-                btnDownload.setVisibility(View.VISIBLE);
+                action = DownloadActions.Translations;
+                checkDownloadConditions();
                 break;
             case R.id.downloadCollection:
-                btnDownload.setText(getString(R.string.lets_go) + ": " +
-                        getString(R.string.select_Collection) +
-                        getSetDetails());
-                btnDownload.setVisibility(View.VISIBLE);
+                action = DownloadActions.ReadyCollection;
+                checkDownloadConditions();
         }
+    }
+
+    private void setSpinnerLanguages() {
+       if(languages.containsKey(RUISO1)) {
+        data = new String[languages.get(RUISO1).size()];
+        for (int i = 0; i < languages.get(RUISO1).size(); i++) {
+            data[i] = languages.get(RUISO1).get(i);
+        }
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, data);
+        adapter.setDropDownViewResource(R.layout.spinner_drop_down);
+        spLanguageFrom.setAdapter(adapter);
+        spLanguageTo.setAdapter(adapter);
+        spLanguageFrom.setPrompt(getString(R.string.selectYourLanguage));
+        spLanguageTo.setPrompt(getString(R.string.selectLanguageToLearn));
+        spLanguageFrom.setVisibility(View.VISIBLE);
+        spLanguageTo.setVisibility(View.VISIBLE);
+        twLanguageTo.setVisibility(View.VISIBLE);
+        twSelectLanguageFrom.setText(R.string.selectYourLanguage);
+       } else {
+           twSelectLanguageFrom.setText(R.string.error_downloading_languages);
+       }
+    }
+
+    private void checkDownloadConditions(){
+        if(wordSetProperties.getLanguageFrom().equals(WordSetProperties.QUESTION)) {
+            return;
+        } else if(wordSetProperties.getLanguageTo().equals(WordSetProperties.QUESTION)){
+            return;
+        } else if( action == null) {
+           return;
+        }
+        if(action == DownloadActions.Translations) {
+            btnDownload.setText(getString(R.string.lets_go) + ": " +
+                    getString(R.string.download_Translations) +
+                    getSetDetails());
+        } else if(action == DownloadActions.ReadyCollection) {
+            btnDownload.setText(getString(R.string.lets_go) + ": " +
+                    getString(R.string.select_Collection) +
+                    getSetDetails());
+        }
+        btnDownload.setVisibility(View.VISIBLE);
     }
 
     private String getSetDetails() {
         return ". " + getString(R.string.For) +
-                collectionProperties.getLanguageFrom() + "-" +
-                collectionProperties.getLanguageTo();
+                wordSetProperties.getLanguageFrom() + "-" +
+                wordSetProperties.getLanguageTo();
+    }
+
+    private class OnItemSelectedListenerFrom implements AdapterView.OnItemSelectedListener {
+
+        @Override
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+            wordSetProperties.setLanguageFrom(data[position]);
+            checkDownloadConditions();
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> parent) {
+
+        }
+    }
+    private class OnItemSelectedListenerTo implements AdapterView.OnItemSelectedListener {
+
+        @Override
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+            wordSetProperties.setLanguageTo(data[position]);
+            checkDownloadConditions();
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> parent) {
+
+        }
     }
 
     private class YandexDictionaryJSONGetTask extends AsyncTask<Void, Void, List<String>> {
@@ -92,10 +182,15 @@ public class DownloadWordsSetProperties extends BaseActivity implements View.OnC
 
         @Override
         protected void onPostExecute(List<String> result) {
-            if (null != mClient)
+            if (null != mClient) {
                 mClient.close();
-            parseLanguages(result);
+            }
+            if (result != null) {
+                parseLanguages(result);
+                setSpinnerLanguages();
+            }
             Log.d("Languages in collection", languages.toString());
+            pDialog.dismiss();
         }
 
         private void parseLanguages(List<String> result) {
@@ -105,9 +200,9 @@ public class DownloadWordsSetProperties extends BaseActivity implements View.OnC
                 if (languages.containsKey(splitResult[0])) {
                     languages.get(splitResult[0]).add(splitResult[1]);
                 } else {
-                       List<String> values = new ArrayList<String>();
-                       values.add(splitResult[1]);
-                    languages.put(splitResult[0],values);
+                    List<String> values = new ArrayList<String>();
+                    values.add(splitResult[1]);
+                    languages.put(splitResult[0], values);
                 }
             }
         }

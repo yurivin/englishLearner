@@ -1,8 +1,9 @@
-package net.yuvin.dictionarisk;
+package net.yuvin.dictionarisk.utils;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.view.MenuItem;
+import net.yuvin.dictionarisk.R;
 import net.yuvin.dictionarisk.view.*;
 
 /**
