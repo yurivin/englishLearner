@@ -31,6 +31,7 @@
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:text="test foreign"
+            android:singleLine="true"
             android:gravity="center"
             android:background="@color/editText"
             android:id="@+id/foreignWordET"
@@ -51,6 +52,7 @@
             android:gravity="center"
             android:background="@color/editText"
             android:text="test translation"
+            android:singleLine="true"
             android:id="@+id/translationET"
             android:layout_below="@+id/translationTV" />
     <Button

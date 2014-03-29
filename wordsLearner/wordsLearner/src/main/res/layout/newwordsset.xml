@@ -32,6 +32,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="30sp"
                 android:gravity="center"
+                android:singleLine="true"
                 android:background="@color/editText"
                 android:id="@+id/foreignWordET"
                 android:layout_below="@+id/foreignWordTV"/>
@@ -49,6 +50,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="30sp"
                 android:background="@color/editText"
+                android:singleLine="true"
                 android:gravity="center"
                 android:id="@+id/translationET"
                 android:layout_below="@+id/translationTV"

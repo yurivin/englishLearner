@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import net.yuvin.dictionarisk.R;
 import net.yuvin.dictionarisk.dao.DbService;
+import net.yuvin.dictionarisk.utils.StandardOnEditActionListener;
 import net.yuvin.dictionarisk.utils.ValidationUtils;
 
 import java.util.HashMap;
@@ -36,6 +37,8 @@ public class EditWord extends BaseActivity implements View.OnClickListener {
         intent = getIntent();
         foreignET.setText(intent.getStringExtra("foreign"));
         translationET.setText(intent.getStringExtra("translation"));
+        foreignET.setOnKeyListener(new StandardOnEditActionListener());
+        translationET.setOnKeyListener(new StandardOnEditActionListener());
     }
 
     @Override

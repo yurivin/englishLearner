@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import net.yuvin.dictionarisk.R;
 import net.yuvin.dictionarisk.dao.DbService;
+import net.yuvin.dictionarisk.utils.StandardOnEditActionListener;
 import net.yuvin.dictionarisk.utils.ValidationUtils;
 
 import java.util.HashMap;
@@ -41,7 +42,9 @@ public class NewWordSet extends BaseActivity implements OnClickListener {
         btnSaveWord = (Button) findViewById(R.id.btnSaveWord);
         btnSaveWordSet = (Button) findViewById(R.id.btnSaveWordSet);
         foreignET = (EditText) findViewById(R.id.foreignWordET);
+        foreignET.setOnKeyListener(new StandardOnEditActionListener());
         translationET = (EditText) findViewById(R.id.translationET);
+        foreignET.setOnKeyListener(new StandardOnEditActionListener());
         btnRename = (Button) findViewById(R.id.btnRename);
 
         btnSaveWord.setOnClickListener(this);

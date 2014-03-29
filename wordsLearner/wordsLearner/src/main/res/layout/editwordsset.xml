@@ -5,32 +5,39 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:background="@color/background">
-    <TextView android:layout_width="match_parent"
-              android:id="@+id/editWordsSetTitleTV"
-              android:layout_height="wrap_content"
-              android:text="@string/edit_words_set"
-              android:gravity="center"
-              android:background="@color/header"
-              android:textSize="20sp"/>
-    <Button android:layout_width="match_parent"
-            android:id="@+id/btnNewWord"
-            android:layout_marginTop="10dp"
-            android:background="@color/button"
-            android:text="@string/new_word"
-            android:layout_height="50dp"
-            android:textSize="20sp" />
-    <Button android:layout_width="match_parent"
-            android:id="@+id/btnRenameSet"
-            android:layout_marginTop="10dp"
-            android:background="@color/button"
-            android:text="@string/rename"
-            android:layout_height="50dp"
-            android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/editWordsSetTitleTV"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_words_set"
+        android:gravity="center"
+        android:background="@color/header"
+        android:textSize="20sp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/btnNewWord"
+        android:layout_marginTop="10dp"
+        android:background="@color/button"
+        android:text="@string/new_word"
+        android:layout_height="50dp"
+        android:textSize="20sp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/btnRenameSet"
+        android:layout_marginTop="10dp"
+        android:background="@color/button"
+        android:text="@string/rename"
+        android:layout_height="50dp"
+        android:textSize="20sp"/>
+
     <ListView
-            android:layout_marginTop="10dp"
-            android:id="@+id/lvEditWordsSet"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:cacheColorHint="@color/background"
-            android:background="@color/background"/>
+        android:layout_marginTop="10dp"
+        android:id="@+id/lvEditWordsSet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:cacheColorHint="@color/background"
+        android:background="@color/background"/>
 </LinearLayout>
