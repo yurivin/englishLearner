@@ -50,11 +50,11 @@ public class MainMenu {
                 activity.startActivity(intent);
                 activity.finish();
                 break;
-            case R.id.Langs:
-                intent = new Intent(activity, YandexDictionaryActivity.class);
-                activity.startActivity(intent);
-                activity.finish();
-                break;
+//            case R.id.Langs:
+//                intent = new Intent(activity, YandexDictionaryActivity.class);
+//                activity.startActivity(intent);
+//                activity.finish();
+//                break;
         }
     }
 }

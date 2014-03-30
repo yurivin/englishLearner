@@ -22,7 +22,7 @@
     <item android:id="@+id/HowToMI"
           android:title="@string/help"
           android:orderInCategory="6" />
-    <item android:id="@+id/Langs"
+    <!-- <item android:id="@+id/Langs"
           android:title="Languages"
-          android:orderInCategory="7" />
+          android:orderInCategory="7" /> -->
 </menu>

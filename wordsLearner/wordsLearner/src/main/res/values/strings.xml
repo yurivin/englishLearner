@@ -57,6 +57,8 @@
     <string name="loading_languages">Loading available languages</string>
     <string name="downloading_languages">Downloading available languages</string>
     <string name="error_downloading_languages">Error during downloading languages</string>
+    <string name="defineWordsToDownloadTranslations">Define words to download translations</string>
+    <string name="send">Send</string>
 
     <string-array name="howToTitles">
         <item>Open words set</item>

@@ -1,15 +1,23 @@
 package net.yuvin.dictionarisk.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Юрий on 23.03.2014.
  */
 public class WordSetProperties extends IdEntity {
 
-    public static final String QUESTION= "?";
+    public static final String QUESTION = "?";
 
     private Long wordSetId;
     private String languageFrom;
     private String languageTo;
+
+    public WordSetProperties(){ }
 
     public Long getWordSetId() {
         return wordSetId;
@@ -20,7 +28,7 @@ public class WordSetProperties extends IdEntity {
     }
 
     public String getLanguageFrom() {
-        if(languageFrom == null) return QUESTION;
+        if (languageFrom == null) return QUESTION;
         return languageFrom;
     }
 
@@ -29,12 +37,11 @@ public class WordSetProperties extends IdEntity {
     }
 
     public String getLanguageTo() {
-        if(languageTo == null) return QUESTION;
+        if (languageTo == null) return QUESTION;
         return languageTo;
     }
 
     public void setLanguageTo(String languageTo) {
         this.languageTo = languageTo;
     }
-
 }

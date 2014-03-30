@@ -1,6 +1,7 @@
 package net.yuvin.dictionarisk.view;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.net.http.AndroidHttpClient;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -81,6 +82,13 @@ public class DownloadWordsSetProperties extends BaseActivity implements View.OnC
             case R.id.downloadCollection:
                 action = DownloadActions.ReadyCollection;
                 checkDownloadConditions();
+                break;
+            case R.id.letDowload :
+                Intent intent = new Intent(this, WordsToDownload.class);
+                intent.putExtra("LanguageFrom", wordSetProperties.getLanguageFrom());
+                intent.putExtra("LanguageTo", wordSetProperties.getLanguageTo());
+                startActivity(intent);
+                finish();
         }
     }
 
@@ -189,7 +197,7 @@ public class DownloadWordsSetProperties extends BaseActivity implements View.OnC
                 parseLanguages(result);
                 setSpinnerLanguages();
             }
-            Log.d("Languages in collection", languages.toString());
+//            Log.d("Languages in collection", languages.toString());
             pDialog.dismiss();
         }
 
