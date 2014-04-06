@@ -47,6 +47,11 @@
                 android:theme="@android:style/Theme.Dialog"
                 android:screenOrientation="portrait">
         </activity>
+        <activity
+            android:name="net.yuvin.dictionarisk.view.AddTranslation"
+            android:theme="@android:style/Theme.Dialog"
+            android:screenOrientation="portrait">
+        </activity>
         <activity android:name="net.yuvin.dictionarisk.view.AvailableWordSets"
                   android:screenOrientation="portrait">
             <intent-filter>

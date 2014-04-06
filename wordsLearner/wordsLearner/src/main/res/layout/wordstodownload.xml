@@ -7,7 +7,7 @@
               android:background="@color/background">
 <RelativeLayout android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="360dp"
+                android:layout_height="400dp"
                 android:id="@+id/rlWTD"
                 android:background="@color/background">
     <TextView
@@ -18,7 +18,6 @@
         android:gravity="center"
         android:background="@color/header"
         android:textSize="20sp"/>
-
     <ListView
         android:layout_marginTop="10dp"
         android:id="@+id/lvDownloadWordsSet"
@@ -30,13 +29,13 @@
     </RelativeLayout>
     <LinearLayout
         android:id="@+id/ll1wtd"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/llwtd2">
-    <Button
+        <Button
         android:layout_width="match_parent"
-        android:id="@+id/btnNewWord"
+        android:id="@+id/btnAddWord"
         android:layout_marginTop="10dp"
         android:background="@color/button"
         android:text="@string/add_word"
