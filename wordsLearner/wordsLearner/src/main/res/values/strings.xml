@@ -61,6 +61,7 @@
     <string name="send">Send</string>
     <string name="enterWordHere">Enter word here:</string>
     <string name="wordAdded">Word Added</string>
+    <string name="enterTranslationToDownloadForeignWord">Enter translation? to download foreign word</string>
 
     <string-array name="howToTitles">
         <item>Open words set</item>

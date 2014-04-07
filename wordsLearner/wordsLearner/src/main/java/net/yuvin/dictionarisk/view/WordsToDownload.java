@@ -13,6 +13,7 @@ import net.yuvin.dictionarisk.utils.ValidationUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 /**
@@ -49,7 +50,9 @@ public class WordsToDownload extends BaseActivity implements View.OnClickListene
         WordSetProperties wordSetProperties = new WordSetProperties();
         wordSetProperties.setLanguageFrom(getIntent().getStringExtra("LanguageFrom"));
         wordSetProperties.setLanguageTo(getIntent().getStringExtra("LanguageTo"));
-        twTitle.setText(twTitle.getText() + " From: " + wordSetProperties.getLanguageFrom() + " To: " + wordSetProperties.getLanguageTo());
+        twTitle.setText(twTitle.getText() + " From: " +
+                new Locale(wordSetProperties.getLanguageFrom()).getDisplayLanguage()
+                + " To: " + new Locale(wordSetProperties.getLanguageTo()).getDisplayLanguage());
         Log.d("wordSetProperties", wordSetProperties.getLanguageFrom() + " " + wordSetProperties.getLanguageTo());
 
         dataList = new ArrayList<Map<String, String>>();

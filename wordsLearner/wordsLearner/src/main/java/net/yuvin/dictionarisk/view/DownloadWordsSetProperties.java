@@ -96,7 +96,8 @@ public class DownloadWordsSetProperties extends BaseActivity implements View.OnC
        if(languages.containsKey(RUISO1)) {
         data = new String[languages.get(RUISO1).size()];
         for (int i = 0; i < languages.get(RUISO1).size(); i++) {
-            data[i] = languages.get(RUISO1).get(i);
+            Locale locale = new Locale(languages.get(RUISO1).get(i));
+            data[i] = locale.getDisplayLanguage();
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, data);
         adapter.setDropDownViewResource(R.layout.spinner_drop_down);
@@ -135,15 +136,15 @@ public class DownloadWordsSetProperties extends BaseActivity implements View.OnC
 
     private String getSetDetails() {
         return ". " + getString(R.string.For) +
-                wordSetProperties.getLanguageFrom() + "-" +
-                wordSetProperties.getLanguageTo();
+                new Locale(wordSetProperties.getLanguageFrom()).getDisplayLanguage() + "-" +
+                new Locale(wordSetProperties.getLanguageTo()).getDisplayLanguage();
     }
 
     private class OnItemSelectedListenerFrom implements AdapterView.OnItemSelectedListener {
 
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-            wordSetProperties.setLanguageFrom(data[position]);
+            wordSetProperties.setLanguageFrom(languages.get(RUISO1).get(position));
             checkDownloadConditions();
         }
 
@@ -156,7 +157,7 @@ public class DownloadWordsSetProperties extends BaseActivity implements View.OnC
 
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-            wordSetProperties.setLanguageTo(data[position]);
+            wordSetProperties.setLanguageTo(languages.get(RUISO1).get(position));
             checkDownloadConditions();
         }
 

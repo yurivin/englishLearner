@@ -7,7 +7,7 @@
               android:background="@color/background">
 <RelativeLayout android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_height="380dp"
                 android:id="@+id/rlWTD"
                 android:background="@color/background">
     <TextView
@@ -22,7 +22,7 @@
         android:layout_marginTop="10dp"
         android:id="@+id/lvDownloadWordsSet"
         android:layout_width="match_parent"
-        android:layout_height="360dp"
+        android:layout_height="340dp"
         android:layout_below="@+id/tvDownloadWordsTitle"
         android:cacheColorHint="@color/background"
         android:background="@color/background"/>

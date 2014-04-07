@@ -3,7 +3,6 @@ package net.yuvin.dictionarisk.view;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import net.yuvin.dictionarisk.R;
@@ -14,11 +13,16 @@ import net.yuvin.dictionarisk.utils.ValidationUtils;
  * Created by Юрий on 06.04.2014.
  */
 public class AddTranslation extends EditWord implements View.OnClickListener{
+    TextView tvforeignWord, tvTranslation;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         foreignET.setVisibility(View.GONE);
+        tvforeignWord =  (TextView)findViewById(R.id.foreignWordTV);
+        tvforeignWord.setVisibility(View.GONE);
+        tvTranslation = (TextView)findViewById(R.id.translationTV);
+        tvTranslation.setText(getString(R.string.enterTranslationToDownloadForeignWord));
         saveBtn.setOnClickListener(this);
     }
 
